@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="720" viewBox="0 0 1540 720">
+<title>Adaptive prefill ablation</title>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#276B9E"/>
+  </marker>
+  <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#D97706"/>
+  </marker>
+  <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#C2413B"/>
+  </marker>
+  <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#2F7D58"/>
+  </marker>
+  <marker id="arrow-fetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#E32626"/>
+  </marker>
+  <marker id="arrow-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-fetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#E32626"/>
+  </marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+  </filter>
+</defs>
+
+<rect width="1540" height="720" fill="#FFFFFF"/>
+<text x="770.00" y="54.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#17324D">Adaptive Prefill: Benefit and Tail-Latency Trade-off</text>
+<text x="770.00" y="86.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="middle" fill="#64748B">Same E180 / K2 / U2 / T6 configuration, 8K-16K mixed input, C4</text>
+<rect x="45.00" y="135.00" width="340.00" height="480.00" rx="14.00" fill="#F5F8FC" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.50"/>
+<text x="215.00" y="173.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">Output throughput</text>
+<rect x="108.00" y="325.63" width="84.00" height="179.37" rx="5.00" fill="#E9C46A" fill-opacity="1.000" stroke="#E9C46A" stroke-width="1.00"/>
+<text x="150.00" y="313.63" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">19.1</text>
+<text x="150.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Fixed 8192</text>
+<rect x="238.00" y="271.95" width="84.00" height="233.05" rx="5.00" fill="#55A57A" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.00"/>
+<text x="280.00" y="259.95" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">24.9</text>
+<text x="280.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Adaptive</text>
+<rect x="120.00" y="550.00" width="190.00" height="42.00" rx="10.00" fill="#EAF8EF" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.50"/>
+<text x="215.00" y="578.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#2F7D58">29.9% higher</text>
+<rect x="410.00" y="135.00" width="340.00" height="480.00" rx="14.00" fill="#F5F8FC" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.50"/>
+<text x="580.00" y="173.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">Mean TTFT</text>
+<rect x="473.00" y="271.95" width="84.00" height="233.05" rx="5.00" fill="#E9C46A" fill-opacity="1.000" stroke="#E9C46A" stroke-width="1.00"/>
+<text x="515.00" y="259.95" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">10,547.5</text>
+<text x="515.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Fixed 8192</text>
+<rect x="603.00" y="353.47" width="84.00" height="151.53" rx="5.00" fill="#55A57A" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.00"/>
+<text x="645.00" y="341.47" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">6,858.1</text>
+<text x="645.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Adaptive</text>
+<rect x="485.00" y="550.00" width="190.00" height="42.00" rx="10.00" fill="#EAF8EF" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.50"/>
+<text x="580.00" y="578.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#2F7D58">35.0% lower</text>
+<rect x="775.00" y="135.00" width="340.00" height="480.00" rx="14.00" fill="#F5F8FC" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.50"/>
+<text x="945.00" y="173.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">Mean TPOT</text>
+<rect x="838.00" y="271.95" width="84.00" height="233.05" rx="5.00" fill="#E9C46A" fill-opacity="1.000" stroke="#E9C46A" stroke-width="1.00"/>
+<text x="880.00" y="259.95" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">129.9</text>
+<text x="880.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Fixed 8192</text>
+<rect x="968.00" y="311.12" width="84.00" height="193.88" rx="5.00" fill="#55A57A" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.00"/>
+<text x="1010.00" y="299.12" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">108.0</text>
+<text x="1010.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Adaptive</text>
+<rect x="850.00" y="550.00" width="190.00" height="42.00" rx="10.00" fill="#EAF8EF" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.50"/>
+<text x="945.00" y="578.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#2F7D58">16.8% lower</text>
+<rect x="1140.00" y="135.00" width="340.00" height="480.00" rx="14.00" fill="#F5F8FC" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.50"/>
+<text x="1310.00" y="173.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">P99 ITL</text>
+<rect x="1203.00" y="305.09" width="84.00" height="199.91" rx="5.00" fill="#E9C46A" fill-opacity="1.000" stroke="#E9C46A" stroke-width="1.00"/>
+<text x="1245.00" y="293.09" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">2,613.2</text>
+<text x="1245.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Fixed 8192</text>
+<rect x="1333.00" y="271.95" width="84.00" height="233.05" rx="5.00" fill="#55A57A" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.00"/>
+<text x="1375.00" y="259.95" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">3,046.4</text>
+<text x="1375.00" y="530.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2937">Adaptive</text>
+<rect x="1215.00" y="550.00" width="190.00" height="42.00" rx="10.00" fill="#FDECE5" fill-opacity="1.000" stroke="#E76F51" stroke-width="1.50"/>
+<text x="1310.00" y="578.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#E76F51">16.6% higher</text>
+<text x="770.00" y="672.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="17" font-weight="600" text-anchor="middle" fill="#64748B">Adaptive chunking improves average throughput and latency, while P99 ITL remains the next optimization target.</text>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+<title>Old and new vLLM MoE offload integration points</title>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#276B9E"/>
+  </marker>
+  <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#D97706"/>
+  </marker>
+  <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#C2413B"/>
+  </marker>
+  <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#2F7D58"/>
+  </marker>
+  <marker id="arrow-fetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#E32626"/>
+  </marker>
+  <marker id="arrow-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-fetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#E32626"/>
+  </marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+  </filter>
+</defs>
+
+<rect width="1600" height="760" fill="#FFFFFF"/>
+<text x="800.00" y="54.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#17324D">MoE Offload Integration: Old vLLM vs v0.25</text>
+<text x="800.00" y="86.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="middle" fill="#64748B">The model-native router stays intact; the offload boundary moves into RoutedExperts / QuantMethod</text>
+<rect x="50.00" y="125.00" width="650.00" height="545.00" rx="18.00" fill="#FFF8F3" fill-opacity="1.000" stroke="#F4A261" stroke-width="2.00"/>
+<rect x="900.00" y="125.00" width="650.00" height="545.00" rx="18.00" fill="#F2F8FD" fill-opacity="1.000" stroke="#4A90C2" stroke-width="2.00"/>
+<text x="395.00" y="170.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#E76F51">DeepSeek-R1 prototype</text>
+<text x="1205.00" y="170.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#276B9E">GLM-5.2 FP8 on vLLM v0.25</text>
+<rect x="145.00" y="210.00" width="500.00" height="82.00" rx="14.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#F4A261" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="395.00" y="241.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">Model-specific forward</text>
+<text x="395.00" y="268.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">router + fused MoE coupled</text>
+<line x1="395.00" y1="292.00" x2="395.00" y2="318.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="145.00" y="322.00" width="500.00" height="82.00" rx="14.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#F4A261" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="395.00" y="353.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">Direct FusedMoE patch</text>
+<text x="395.00" y="380.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">cache policy inside old call path</text>
+<line x1="395.00" y1="404.00" x2="395.00" y2="430.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="145.00" y="434.00" width="500.00" height="82.00" rx="14.00" fill="#FDECE5" fill-opacity="1.000" stroke="#E76F51" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="395.00" y="465.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">Shared canonical cache</text>
+<text x="395.00" y="492.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">two uBatches mutate same slots</text>
+<line x1="395.00" y1="516.00" x2="395.00" y2="542.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="145.00" y="546.00" width="500.00" height="82.00" rx="14.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#F4A261" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="395.00" y="577.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">CPU miss + GPU hit merge</text>
+<text x="395.00" y="604.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">prototype overlap mechanism</text>
+<rect x="955.00" y="210.00" width="500.00" height="82.00" rx="14.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#4A90C2" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="1205.00" y="241.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">Router</text>
+<text x="1205.00" y="268.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">native GLM routing / DSA / IndexShare</text>
+<line x1="1205.00" y1="292.00" x2="1205.00" y2="318.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="955.00" y="322.00" width="500.00" height="82.00" rx="14.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#4A90C2" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="1205.00" y="353.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">MoERunner</text>
+<text x="1205.00" y="380.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">vLLM scheduling and dispatch</text>
+<line x1="1205.00" y1="404.00" x2="1205.00" y2="430.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="955.00" y="434.00" width="500.00" height="82.00" rx="14.00" fill="#EAF8EF" fill-opacity="1.000" stroke="#55A57A" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="1205.00" y="465.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">RoutedExperts</text>
+<text x="1205.00" y="492.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">offload ownership boundary</text>
+<line x1="1205.00" y1="516.00" x2="1205.00" y2="542.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="955.00" y="546.00" width="500.00" height="82.00" rx="14.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#4A90C2" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="1205.00" y="577.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">QuantMethod</text>
+<text x="1205.00" y="604.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">FP8 expert execution</text>
+<rect x="720.00" y="330.00" width="160.00" height="114.00" rx="14.00" fill="#FFF7DD" fill-opacity="1.000" stroke="#E9C46A" stroke-width="2.00" filter="url(#shadow)"/>
+<text x="800.00" y="356.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">migration</text>
+<text x="800.00" y="373.55" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">keep native routing</text>
+<text x="800.00" y="391.10" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">rebuild boundary</text>
+<line x1="700.00" y1="387.00" x2="720.00" y2="387.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="880.00" y1="387.00" x2="900.00" y2="387.00" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="395.00" y="645.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#E76F51">Risk discovered: canonical-slot overwrite under DBO</text>
+<text x="1205.00" y="645.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#2F7D58">Resolution: graph-stable shadow stage + guarded commit</text>
+</svg>
