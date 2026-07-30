@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820">
+<title>GLM-5.2 FP8 intuitive decode cache policy</title>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#276B9E"/>
+  </marker>
+  <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#D97706"/>
+  </marker>
+  <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#C2413B"/>
+  </marker>
+  <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#2F7D58"/>
+  </marker>
+  <marker id="arrow-fetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#E32626"/>
+  </marker>
+  <marker id="arrow-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-fetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#E32626"/>
+  </marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+  </filter>
+</defs>
+
+<rect width="1500" height="820" fill="#FFFFFF"/>
+<line x1="75.00" y1="55.00" x2="123.00" y2="55.00" stroke="#111111" stroke-width="2.3" marker-end="url(#arrow-small)"/>
+<text x="133.00" y="61.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="start" fill="#111111">Router / Policy Flow</text>
+<line x1="490.00" y1="55.00" x2="538.00" y2="55.00" stroke="#587D43" stroke-width="2.3" marker-end="url(#arrow-green)"/>
+<text x="548.00" y="61.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="start" fill="#111111">Cache Hit / Protected</text>
+<line x1="905.00" y1="55.00" x2="953.00" y2="55.00" stroke="#E32626" stroke-width="2.3" marker-end="url(#arrow-prefetch-small)"/>
+<text x="963.00" y="61.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="start" fill="#111111">Miss / Replacement</text>
+<text x="750.00" y="100.00" font-family="Times New Roman, Times, serif" font-size="20" font-weight="600" text-anchor="middle" fill="#111111">One decode layer: K2 chooses the policy working set, U2 limits cache updates</text>
+<rect x="35.00" y="125.00" width="375.00" height="265.00" rx="9.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="222.00" y="151.00" font-family="Times New Roman, Times, serif" font-size="18" font-weight="600" text-anchor="middle" fill="#111111">1. Select the K2 policy working set</text>
+<text x="54.00" y="203.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="start" fill="#111111">t0</text>
+<rect x="86.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="103.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
+<rect x="124.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="141.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E12</text>
+<rect x="162.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="179.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E3</text>
+<rect x="200.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="217.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
+<rect x="238.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="255.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E5</text>
+<rect x="276.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="293.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E8</text>
+<rect x="314.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="331.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E2</text>
+<rect x="352.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="369.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E41</text>
+<text x="54.00" y="261.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="start" fill="#111111">t1</text>
+<rect x="86.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="103.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
+<rect x="124.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="141.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E23</text>
+<rect x="162.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="179.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E9</text>
+<rect x="200.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="217.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E11</text>
+<rect x="238.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="255.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E2</text>
+<rect x="276.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="293.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E6</text>
+<rect x="314.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="331.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E5</text>
+<rect x="352.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
+<text x="369.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E20</text>
+<text x="222.00" y="296.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#526B91">K=2: only the highlighted router ranks affect cache policy</text>
+<rect x="90.00" y="320.00" width="265.00" height="52.00" rx="9.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="222.50" y="350.76" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#111111">K2 active set = {E4, E7, E12, E23}</text>
+<rect x="445.00" y="125.00" width="440.00" height="265.00" rx="9.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="665.00" y="151.00" font-family="Times New Roman, Times, serif" font-size="18" font-weight="600" text-anchor="middle" fill="#111111">2. Lookup K2 experts in Experts Cache</text>
+<rect x="485.00" y="182.00" width="165.00" height="92.00" rx="9.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.80"/>
+<text x="567.50" y="214.24" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">HIT</text>
+<text x="567.50" y="233.44" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">E4, E7</text>
+<text x="567.50" y="252.64" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">protect</text>
+<rect x="680.00" y="182.00" width="165.00" height="92.00" rx="9.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.80"/>
+<text x="762.50" y="215.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">CPU</text>
+<text x="762.50" y="233.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">E12, E23</text>
+<text x="762.50" y="251.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">update candidates</text>
+<line x1="410.00" y1="250.00" x2="445.00" y2="250.00" stroke="#111111" stroke-width="2" marker-end="url(#arrow-small)"/>
+<text x="665.00" y="320.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="500" text-anchor="middle" fill="#111111">Hits are protected from eviction.</text>
+<text x="665.00" y="337.50" font-family="Times New Roman, Times, serif" font-size="14" font-weight="500" text-anchor="middle" fill="#111111">Misses remain CPU candidates unless selected by U2.</text>
+<text x="665.00" y="368.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#111111">The complete router top-8 is classified after the update.</text>
+<rect x="920.00" y="125.00" width="545.00" height="265.00" rx="9.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="1192.00" y="151.00" font-family="Times New Roman, Times, serif" font-size="18" font-weight="600" text-anchor="middle" fill="#111111">3. Protect hits and select U2 victims</text>
+<text x="970.00" y="178.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="start" fill="#111111">policy_sort: eviction priority</text>
+<rect x="970.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="996.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E1</text>
+<rect x="1025.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1051.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E9</text>
+<rect x="1080.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1106.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
+<rect x="1135.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1161.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E15</text>
+<rect x="1190.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1216.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
+<rect x="1245.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1271.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
+<rect x="1300.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1326.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
+<rect x="1355.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1381.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
+<text x="1025.00" y="258.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#E32626">victim head</text>
+<text x="1355.00" y="258.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#587D43">protected tail</text>
+<line x1="885.00" y1="250.00" x2="920.00" y2="250.00" stroke="#111111" stroke-width="2" marker-end="url(#arrow-small)"/>
+<rect x="990.00" y="292.00" width="405.00" height="68.00" rx="9.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="1192.50" y="322.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">U=2</text>
+<text x="1192.50" y="340.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">E12 replaces E1   ·   E23 replaces E9</text>
+<text x="750.00" y="430.00" font-family="Times New Roman, Times, serif" font-size="19" font-weight="600" text-anchor="middle" fill="#111111">4. Apply the two selected updates</text>
+<text x="65.00" y="465.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="start" fill="#111111">Experts Cache before</text>
+<rect x="65.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="88.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E1</text>
+<rect x="114.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="137.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
+<rect x="163.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="186.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
+<rect x="212.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="235.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E9</text>
+<rect x="261.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="284.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E15</text>
+<rect x="310.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="333.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
+<rect x="359.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="382.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
+<rect x="408.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="431.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E180</text>
+<rect x="560.00" y="454.00" width="180.00" height="88.00" rx="9.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="650.00" y="493.84" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">Decode Buffer U2</text>
+<text x="650.00" y="513.04" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">E12   ·   E23</text>
+<text x="875.00" y="465.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="start" fill="#111111">Experts Cache after update</text>
+<rect x="875.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="898.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E12</text>
+<rect x="924.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="947.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
+<rect x="973.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="996.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
+<rect x="1022.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1045.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E23</text>
+<rect x="1071.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1094.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E15</text>
+<rect x="1120.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1143.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
+<rect x="1169.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1192.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
+<rect x="1218.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
+<text x="1241.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E180</text>
+<line x1="457.00" y1="497.00" x2="560.00" y2="497.00" stroke="#E32626" stroke-width="2.2" marker-end="url(#arrow-prefetch-small)"/>
+<text x="508.00" y="485.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#E32626">victim slots E1, E9</text>
+<line x1="740.00" y1="497.00" x2="875.00" y2="497.00" stroke="#E32626" stroke-width="2.2" marker-end="url(#arrow-prefetch-small)"/>
+<text x="807.00" y="485.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#E32626">D2D commit + publish</text>
+<text x="650.00" y="565.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="500" text-anchor="middle" fill="#111111">Selected misses are staged in Decode Buffer; only the short commit writes Experts Cache.</text>
+<text x="750.00" y="620.00" font-family="Times New Roman, Times, serif" font-size="19" font-weight="600" text-anchor="middle" fill="#111111">5. Execute all router top-8 routes using the published map</text>
+<rect x="135.00" y="652.00" width="445.00" height="78.00" rx="9.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="357.50" y="686.58" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">GPU fused MoE</text>
+<text x="357.50" y="706.98" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">existing cache hits + U2 updated experts</text>
+<rect x="680.00" y="652.00" width="390.00" height="78.00" rx="9.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
+<text x="875.00" y="686.58" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">CPU forwardSparse</text>
+<text x="875.00" y="706.98" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">remaining non-resident experts</text>
+<circle cx="1160.00" cy="691.00" r="27.00" fill="#FFFFFF" stroke="#111111" stroke-width="1.7"/>
+<text x="1160.00" y="701.00" font-family="Times New Roman, Times, serif" font-size="29" font-weight="400" text-anchor="middle" fill="#111111">+</text>
+<polyline points="580.00,691.00 610.00,691.00 610.00,635.00 1160.00,635.00 1160.00,664.00" fill="none" stroke="#111111" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-small)"/>
+<line x1="1070.00" y1="691.00" x2="1133.00" y2="691.00" stroke="#111111" stroke-width="2" marker-end="url(#arrow-small)"/>
+<line x1="1187.00" y1="691.00" x2="1360.00" y2="691.00" stroke="#111111" stroke-width="2.1" marker-end="url(#arrow-small)"/>
+<text x="1375.00" y="697.00" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="start" fill="#111111">MoE output</text>
+<text x="750.00" y="756.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#111111">K2 changes cache protection/update decisions; it does not change GLM&#x27;s top-8 routing semantics.</text>
+<text x="750.00" y="804.00" font-family="Times New Roman, Times, serif" font-size="20" font-weight="600" text-anchor="middle" fill="#111111">Figure 4. Decode K2/U2 cache policy: protect hits, replace two victims, then split GPU and CPU work.</text>
+</svg>
