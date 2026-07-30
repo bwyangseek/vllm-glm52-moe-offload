@@ -1,0 +1,315 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="2500" height="1420"
+  viewBox="0 0 2500 1420">
+<defs>
+  <pattern id="diagonalHatch" width="9" height="9"
+    patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+    <rect width="9" height="9" fill="#bec5ca"/>
+    <line x1="0" y1="0" x2="0" y2="9"
+      stroke="#6e767c" stroke-width="3"/>
+  </pattern>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+    markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#3d4a52"/>
+  </marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="1250.0" y="48.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#26323c">GLM-5.2 FP8 Decode DBO overlap：TP0 / layer 5 / 两个 uBatch</text>
+<text x="1250.0" y="80.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#66737d">glm52_main_chunk_random_decode_adaptive_446334.sqlite · Nsight 实测时间戳 · 斜线 sync_kernel 为 CPU 完成轮询</text>
+<line x1="415.2" y1="120.0" x2="415.2" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="415.2" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">20</text>
+<line x1="501.2" y1="120.0" x2="501.2" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="501.2" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">70</text>
+<line x1="587.3" y1="120.0" x2="587.3" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="587.3" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">120</text>
+<line x1="673.3" y1="120.0" x2="673.3" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="673.3" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">170</text>
+<line x1="759.3" y1="120.0" x2="759.3" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="759.3" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">220</text>
+<line x1="845.3" y1="120.0" x2="845.3" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="845.3" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">270</text>
+<line x1="931.4" y1="120.0" x2="931.4" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="931.4" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">320</text>
+<line x1="1017.4" y1="120.0" x2="1017.4" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1017.4" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">370</text>
+<line x1="1103.4" y1="120.0" x2="1103.4" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1103.4" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">420</text>
+<line x1="1189.5" y1="120.0" x2="1189.5" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1189.5" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">470</text>
+<line x1="1275.5" y1="120.0" x2="1275.5" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1275.5" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">520</text>
+<line x1="1361.5" y1="120.0" x2="1361.5" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1361.5" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">570</text>
+<line x1="1447.5" y1="120.0" x2="1447.5" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1447.5" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">620</text>
+<line x1="1533.6" y1="120.0" x2="1533.6" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1533.6" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">670</text>
+<line x1="1619.6" y1="120.0" x2="1619.6" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1619.6" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">720</text>
+<line x1="1705.6" y1="120.0" x2="1705.6" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1705.6" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">770</text>
+<line x1="1791.6" y1="120.0" x2="1791.6" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1791.6" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">820</text>
+<line x1="1877.7" y1="120.0" x2="1877.7" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1877.7" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">870</text>
+<line x1="1963.7" y1="120.0" x2="1963.7" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="1963.7" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">920</text>
+<line x1="2049.7" y1="120.0" x2="2049.7" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="2049.7" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">970</text>
+<line x1="2135.7" y1="120.0" x2="2135.7" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="2135.7" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">1020</text>
+<line x1="2221.8" y1="120.0" x2="2221.8" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="2221.8" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">1070</text>
+<line x1="2307.8" y1="120.0" x2="2307.8" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
+<text x="2307.8" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">1120</text>
+<text x="360.0" y="172.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">CUDA Graph — model compute</text>
+<rect x="380.0" y="145.0" width="2000.0" height="42.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="237.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">CUDA Graph — aux/shared</text>
+<rect x="380.0" y="210.0" width="2000.0" height="42.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="302.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">CUDA Graph — offload/control</text>
+<rect x="380.0" y="275.0" width="2000.0" height="42.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="367.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">CUDA Graph — D2H / H2D</text>
+<rect x="380.0" y="340.0" width="2000.0" height="42.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="432.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">CPU worker — forwardSparse</text>
+<rect x="380.0" y="405.0" width="2000.0" height="42.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<rect x="455.4" y="277.0" width="5.4" height="38.0" rx="3.0" fill="#e97818" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="463.7" y="277.0" width="2.3" height="38.0" rx="3.0" fill="#dc6a56" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="472.9" y="277.0" width="43.9" height="38.0" rx="3.0" fill="#f3c51d" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="474.6" y="147.0" width="4.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="478.8" y="147.0" width="5.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="484.2" y="147.0" width="2.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="486.5" y="147.0" width="2.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="488.9" y="147.0" width="3.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="492.0" y="147.0" width="42.7" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="517.1" y="147.0" width="3.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="520.3" y="277.0" width="527.6" height="38.0" rx="3.0" fill="url(#diagonalHatch)" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="784.1" y="303.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">sync / poll CPU</text>
+<rect x="535.0" y="147.0" width="5.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="540.0" y="147.0" width="5.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="545.5" y="147.0" width="22.6" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="568.3" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="573.2" y="147.0" width="3.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="579.7" y="147.0" width="2.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="581.7" y="147.0" width="437.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1019.3" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1022.4" y="147.0" width="18.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1040.9" y="147.0" width="2.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1043.5" y="147.0" width="3.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1047.3" y="147.0" width="2.7" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1050.1" y="147.0" width="9.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1059.3" y="147.0" width="3.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1062.8" y="147.0" width="3.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1066.1" y="147.0" width="5.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1071.8" y="147.0" width="2.7" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1074.6" y="147.0" width="2.8" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1077.5" y="147.0" width="1.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1079.2" y="147.0" width="3.6" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1083.0" y="147.0" width="23.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1099.7" y="147.0" width="21.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1121.3" y="147.0" width="5.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1127.3" y="147.0" width="3.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1130.4" y="147.0" width="11.7" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1141.8" y="147.0" width="25.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1167.2" y="147.0" width="4.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1169.7" y="212.0" width="3.0" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1172.0" y="147.0" width="32.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1173.0" y="212.0" width="22.5" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1195.6" y="212.0" width="2.3" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1197.9" y="212.0" width="3.1" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1201.2" y="212.0" width="6.0" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1205.0" y="147.0" width="9.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1213.7" y="147.0" width="7.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1227.7" y="147.0" width="1.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1229.4" y="147.0" width="1.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1231.0" y="147.0" width="4.7" height="38.0" rx="3.0" fill="#8e54af" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1235.9" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#8e54af" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1264.1" y="147.0" width="4.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1268.9" y="147.0" width="5.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1274.0" y="147.0" width="2.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1276.5" y="147.0" width="2.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1279.0" y="147.0" width="3.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1282.3" y="147.0" width="41.2" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1284.7" y="277.0" width="5.6" height="38.0" rx="3.0" fill="#e97818" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1290.8" y="277.0" width="476.0" height="38.0" rx="3.0" fill="#f2a21b" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1528.8" y="303.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">Decode Buffer H2D stage</text>
+<rect x="1323.8" y="147.0" width="5.6" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1329.1" y="147.0" width="5.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1334.5" y="147.0" width="22.6" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1357.2" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1362.1" y="147.0" width="2.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1367.7" y="147.0" width="2.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1369.8" y="147.0" width="302.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1672.2" y="147.0" width="3.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1675.3" y="147.0" width="17.8" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1693.3" y="147.0" width="8.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1701.5" y="147.0" width="2.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1704.2" y="147.0" width="2.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1706.7" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1709.8" y="147.0" width="6.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1716.3" y="147.0" width="2.6" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1719.1" y="147.0" width="10.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1729.3" y="147.0" width="3.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1732.6" y="147.0" width="2.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1735.4" y="147.0" width="9.0" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1744.5" y="147.0" width="3.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1748.1" y="147.0" width="3.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1751.4" y="147.0" width="1.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1752.6" y="147.0" width="12.7" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1765.5" y="147.0" width="21.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1766.6" y="147.0" width="3.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1769.7" y="277.0" width="16.6" height="38.0" rx="3.0" fill="url(#diagonalHatch)" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1786.8" y="147.0" width="3.6" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1790.6" y="147.0" width="5.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1796.3" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1799.2" y="147.0" width="2.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1801.6" y="147.0" width="1.6" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1803.3" y="147.0" width="3.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1806.9" y="147.0" width="24.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1823.8" y="147.0" width="21.7" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1845.8" y="147.0" width="5.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1852.1" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1855.1" y="147.0" width="11.7" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1866.4" y="147.0" width="34.6" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1901.4" y="147.0" width="4.7" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1903.9" y="212.0" width="3.3" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1906.3" y="147.0" width="33.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1907.4" y="212.0" width="23.9" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1931.5" y="212.0" width="2.2" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1933.8" y="212.0" width="2.6" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1936.6" y="212.0" width="5.6" height="38.0" rx="3.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1939.6" y="147.0" width="8.8" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1948.0" y="147.0" width="7.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1955.6" y="147.0" width="1.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1957.2" y="147.0" width="1.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1958.7" y="147.0" width="5.5" height="38.0" rx="3.0" fill="#8e54af" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2006.6" y="277.0" width="5.7" height="38.0" rx="3.0" fill="#e97818" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2015.4" y="277.0" width="20.7" height="38.0" rx="3.0" fill="#dc6a56" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2042.9" y="277.0" width="337.1" height="38.0" rx="3.0" fill="#f2a21b" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="2211.5" y="303.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">Decode Buffer H2D stage</text>
+<rect x="2045.0" y="147.0" width="4.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2049.6" y="147.0" width="5.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2054.9" y="147.0" width="1.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2056.9" y="147.0" width="1.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2059.0" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2062.0" y="147.0" width="44.9" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2107.1" y="147.0" width="4.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2111.1" y="147.0" width="5.3" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2116.6" y="147.0" width="29.7" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2146.6" y="147.0" width="3.1" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2151.9" y="147.0" width="2.5" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2157.4" y="147.0" width="2.4" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2159.6" y="147.0" width="214.2" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2374.0" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2377.1" y="147.0" width="2.9" height="38.0" rx="3.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="390.2" y="342.0" width="7.8" height="38.0" rx="3.0" fill="#20a8c2" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="421.5" y="342.0" width="5.1" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="431.9" y="342.0" width="4.5" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="441.7" y="342.0" width="3.9" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1055.4" y="342.0" width="6.6" height="38.0" rx="3.0" fill="#20a8c2" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1257.4" y="342.0" width="4.7" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1267.6" y="342.0" width="4.3" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1276.9" y="342.0" width="3.4" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1810.2" y="342.0" width="7.3" height="38.0" rx="3.0" fill="#20a8c2" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1974.1" y="342.0" width="5.2" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1985.0" y="342.0" width="4.0" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1994.8" y="342.0" width="4.2" height="38.0" rx="3.0" fill="#ed9c22" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="481.0" y="407.0" width="555.0" height="38.0" rx="3.0" fill="#b45d4e" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="758.4" y="433.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">CPU-A miss experts</text>
+<rect x="1370.9" y="407.0" width="405.4" height="38.0" rx="3.0" fill="#b45d4e" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1573.6" y="433.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">CPU-B miss experts</text>
+<rect x="540.9" y="91.0" width="435.0" height="36.0" rx="9.0" fill="#fff4c9" stroke="#b48d24" stroke-width="1.5" opacity="1.000"/>
+<text x="758.4" y="115.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#26323c">CPU-A 322.6 μs | 有用 GPU 覆盖 318.9 μs (98.9%)</text>
+<rect x="1356.1" y="91.0" width="435.0" height="36.0" rx="9.0" fill="#e5f5fb" stroke="#4da1c4" stroke-width="1.5" opacity="1.000"/>
+<text x="1573.6" y="115.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#26323c">CPU-B 235.6 μs | 有用 GPU 覆盖 233.9 μs (99.3%)</text>
+<rect x="380.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#8e54af" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="414.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">cache policy</text>
+<rect x="585.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="619.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">GPU fused MoE</text>
+<rect x="790.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#7eb3dc" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="824.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">other model compute</text>
+<rect x="1010.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#46aaa9" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1044.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">aux/shared compute</text>
+<rect x="1240.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#f3c51d" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1274.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">Experts Cache update</text>
+<rect x="1490.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#f2a21b" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1524.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">Decode Buffer H2D stage</text>
+<rect x="1765.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#dc6a56" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1799.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">D2D commit</text>
+<rect x="1945.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="url(#diagonalHatch)" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1979.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">sync/poll wait</text>
+<rect x="2145.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#b45d4e" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="2179.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">CPU forwardSparse</text>
+<text x="1250.0" y="565.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" text-anchor="middle" fill="#26323c">当前 post-submit handoff：先提交 CPU-A，再将 B Decode Buffer commit 到 Experts Cache 并入队 GPU-B</text>
+<text x="1250.0" y="596.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="400" text-anchor="middle" fill="#66737d">A = ubatch 0；B = ubatch 1。下图使用同一时间轴，箭头表示必须满足的顺序。</text>
+<text x="360.0" y="659.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">GPU-A / model work</text>
+<rect x="380.0" y="630.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="724.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">uBatch A submit / Experts Cache</text>
+<rect x="380.0" y="695.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="789.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">uBatch A CPU</text>
+<rect x="380.0" y="760.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="889.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">GPU-B / model work</text>
+<rect x="380.0" y="860.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="954.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">uBatch B submit / Decode Buffer</text>
+<rect x="380.0" y="925.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="1019.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">uBatch B CPU</text>
+<rect x="380.0" y="990.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<text x="360.0" y="1119.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">下一次 A handoff</text>
+<rect x="380.0" y="1090.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
+<rect x="1370.9" y="632.0" width="301.1" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1672.2" y="632.0" width="3.0" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1675.3" y="632.0" width="17.8" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1693.3" y="632.0" width="8.0" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1701.5" y="632.0" width="2.5" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1704.2" y="632.0" width="2.4" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1706.7" y="632.0" width="2.9" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1709.8" y="632.0" width="6.4" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1716.3" y="632.0" width="2.6" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1719.1" y="632.0" width="10.1" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1729.3" y="632.0" width="3.2" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1732.6" y="632.0" width="2.5" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1735.4" y="632.0" width="9.0" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1744.5" y="632.0" width="3.4" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1748.1" y="632.0" width="3.1" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1751.4" y="632.0" width="13.8" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1765.5" y="632.0" width="10.8" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="481.0" y="862.0" width="3.1" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="484.2" y="862.0" width="2.3" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="486.5" y="862.0" width="2.2" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="488.9" y="862.0" width="3.0" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="492.0" y="862.0" width="42.7" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="535.0" y="862.0" width="10.5" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="545.5" y="862.0" width="22.6" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="568.3" y="862.0" width="2.9" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="573.2" y="862.0" width="3.5" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="579.7" y="862.0" width="439.4" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1019.3" y="862.0" width="2.9" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1022.4" y="862.0" width="13.6" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1573.6" y="659.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">GPU-A work covering CPU-B（实测 union）</text>
+<text x="758.4" y="889.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">GPU-B work covering CPU-A（实测 union）</text>
+<rect x="455.4" y="697.0" width="5.4" height="38.0" rx="3.0" fill="#e97818" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="463.7" y="697.0" width="2.3" height="38.0" rx="3.0" fill="#dc6a56" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="472.9" y="697.0" width="43.9" height="38.0" rx="3.0" fill="#f3c51d" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="481.0" y="762.0" width="555.0" height="38.0" rx="3.0" fill="#b45d4e" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="758.4" y="788.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">CPU-A miss experts</text>
+<rect x="1284.7" y="927.0" width="5.6" height="38.0" rx="3.0" fill="#e97818" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="1290.8" y="927.0" width="476.0" height="38.0" rx="3.0" fill="#f2a21b" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1528.8" y="953.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">B H2D → Decode Buffer</text>
+<rect x="520.3" y="927.0" width="527.6" height="38.0" rx="3.0" fill="url(#diagonalHatch)" stroke="#4e6678" stroke-width="1.5" opacity="0.350"/>
+<rect x="1370.9" y="992.0" width="405.4" height="38.0" rx="3.0" fill="#b45d4e" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<text x="1573.6" y="1018.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#26323c">CPU-B miss experts</text>
+<rect x="2006.6" y="1092.0" width="5.7" height="38.0" rx="3.0" fill="#e97818" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<rect x="2015.4" y="1092.0" width="20.7" height="38.0" rx="3.0" fill="#dc6a56" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
+<line x1="460.8" y1="717.0" x2="463.7" y2="717.0" stroke="#3d4a52" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="466.0" y1="717.0" x2="481.0" y2="881.0" stroke="#3d4a52" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="473.5" y="805.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#26323c">publish map + enqueue GPU-B</text>
+<rect x="481.0" y="824.0" width="555.0" height="34.0" rx="9.0" fill="#fff2bd" stroke="#d3a51c" stroke-width="1.5" opacity="1.000"/>
+<text x="758.4" y="847.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#9d5a23">OVERLAP 1：CPU-A ∥ GPU-B，实测覆盖 98.9%</text>
+<rect x="1370.9" y="824.0" width="405.4" height="34.0" rx="9.0" fill="#dff4fb" stroke="#43a6c9" stroke-width="1.5" opacity="1.000"/>
+<text x="1573.6" y="847.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#1e6687">OVERLAP 2：CPU-B ∥ GPU-A，实测覆盖 99.3%</text>
+<rect x="380.0" y="1215.0" width="2000.0" height="150.0" rx="12.0" fill="#e8f4e4" stroke="#86aa78" stroke-width="1.5" opacity="1.000"/>
+<text x="1250.0" y="1253.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#315d2d">一句话理解当前流程</text>
+<text x="1250.0" y="1290.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#315d2d">A 先把 D2H 输入和 submit_kernel 排入通信流，再唤醒 B；B 随后完成短 D2D commit、发布 cache map 并入队 GPU-B。</text>
+<text x="1250.0" y="1323.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#315d2d">因此 GPU-B 不再早于 CPU-A submit 被大量消耗；Decode Buffer 与 reader_done 屏障继续保护 Experts Cache 的正确性。</text>
+<text x="1250.0" y="1351.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="400" text-anchor="middle" fill="#5c6b59">本样本：CPU-A←GPU-B 覆盖 98.9%，CPU-B←GPU-A 覆盖 99.3%；剩余空洞来自两侧 GPU work packet 与 CPU miss 时长仍不匹配。</text>
+<text x="1250.0" y="1400.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#26323c">Time relative to 788.330 ms (microseconds)</text>
+</svg>
