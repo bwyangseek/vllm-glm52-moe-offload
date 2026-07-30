@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2150" height="600" viewBox="0 0 2150 600">
+<title>GLM-5.2 FP8 mixed-length serving performance</title>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#276B9E"/>
+  </marker>
+  <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#D97706"/>
+  </marker>
+  <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#C2413B"/>
+  </marker>
+  <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#2F7D58"/>
+  </marker>
+  <marker id="arrow-fetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch" markerWidth="10" markerHeight="10" refX="8" refY="3"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#E32626"/>
+  </marker>
+  <marker id="arrow-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#334155"/>
+  </marker>
+  <marker id="arrow-fetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#89A9DA"/>
+  </marker>
+  <marker id="arrow-prefetch-small" markerWidth="7" markerHeight="7" refX="6" refY="2.5"
+          orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,5 L7,2.5 z" fill="#E32626"/>
+  </marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+  </filter>
+</defs>
+
+<rect width="2150" height="600" fill="#FFFFFF"/>
+<text x="1075.00" y="54.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#17324D">GLM-5.2 FP8 Mixed-Length Serving Performance</text>
+<text x="1075.00" y="86.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="middle" fill="#64748B">Random 8K–16K · C4 · 32 requests · 128 output tokens · temperature=0 · mean ± sample standard deviation</text>
+<rect x="70.00" y="145.00" width="2010.00" height="72.00" rx="10.00" fill="#17324D" fill-opacity="1.000" stroke="#17324D" stroke-width="0.00"/>
+<text x="200.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">Workload</text>
+<text x="495.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">System</text>
+<text x="705.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">GPUs</text>
+<text x="785.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">n</text>
+<text x="930.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">Output tok/s ↑</text>
+<text x="1155.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">Total tok/s ↑</text>
+<text x="1375.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">Mean TTFT ms ↓</text>
+<text x="1580.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">Mean TPOT ms ↓</text>
+<text x="1785.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">P99 ITL ms ↓</text>
+<text x="1985.00" y="189.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">Output / TP16</text>
+<rect x="70.00" y="217.00" width="260.00" height="228.00" rx="0.00" fill="#F0F5FA" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.00"/>
+<text x="200.00" y="321.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#17324D">Random 8K–16K</text>
+<rect x="330.00" y="217.00" width="1750.00" height="76.00" rx="0.00" fill="#FAFBFD" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.00"/>
+<text x="495.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2937">TP8 Offload · fixed 8192</text>
+<text x="705.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">8</text>
+<text x="785.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">3</text>
+<text x="930.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">19.14 ± 2.39</text>
+<text x="1155.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">1,792 ± 207</text>
+<text x="1375.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">10,547 ± 1,501</text>
+<text x="1580.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">129.88 ± 16.81</text>
+<text x="1785.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">2,613.2 ± 7.2</text>
+<text x="1985.00" y="264.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">60.7%</text>
+<rect x="330.00" y="293.00" width="1750.00" height="76.00" rx="0.00" fill="#EDF8F1" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.00"/>
+<text x="495.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2937">TP8 Offload · adaptive</text>
+<text x="705.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">8</text>
+<text x="785.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">3</text>
+<text x="930.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">24.87 ± 0.50</text>
+<text x="1155.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">2,330 ± 18</text>
+<text x="1375.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="800" text-anchor="middle" fill="#2F7D58">6,858 ± 552</text>
+<text x="1580.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">108.05 ± 7.62</text>
+<text x="1785.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">3,046.4 ± 172.0</text>
+<text x="1985.00" y="340.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">78.8%</text>
+<rect x="330.00" y="369.00" width="1750.00" height="76.00" rx="0.00" fill="#EEF5FB" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.00"/>
+<text x="495.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2937">TP16 Full GPU · 2 nodes</text>
+<text x="705.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">16</text>
+<text x="785.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">2</text>
+<text x="930.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="800" text-anchor="middle" fill="#2F7D58">31.55 ± 0.34</text>
+<text x="1155.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="800" text-anchor="middle" fill="#2F7D58">2,940 ± 7</text>
+<text x="1375.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#1F2937">8,030 ± 404</text>
+<text x="1580.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="800" text-anchor="middle" fill="#2F7D58">64.50 ± 1.82</text>
+<text x="1785.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="800" text-anchor="middle" fill="#2F7D58">2,317.9 ± 3.9</text>
+<text x="1985.00" y="416.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#276B9E">100.0%</text>
+<rect x="235.00" y="473.00" width="1680.00" height="82.00" rx="12.00" fill="#EAF8EF" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.40"/>
+<text x="1075.00" y="507.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#2F7D58">Mixed 8K–16K: TP8 adaptive reaches 78.8% of TP16 output throughput and 79.3% of total-token throughput with half the GPUs.</text>
+<text x="1075.00" y="535.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">Bold green = best measured value within this workload. TP8 results use three runs; the available TP16 baseline uses two.</text>
+</svg>
