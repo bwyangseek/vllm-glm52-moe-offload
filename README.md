@@ -1,4 +1,4 @@
-# vLLM GLM-5.2 FP8 MoE Offload
+# vLLM GLM-5.2 FP8 MoE Experts Offload
 
 面向 GLM-5.2 FP8 的专家级 CPU–GPU MoE 卸载系统，基于 vLLM 实现了
 Adaptive Prefill、带 reader 保护的双 uBatch Decode、CUDA Graph 和
