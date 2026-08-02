@@ -4,6 +4,8 @@
 Adaptive Prefill、带 reader 保护的双 uBatch Decode、CUDA Graph 和
 NUMA 感知的 CPU 专家计算。
 
+![系统总览](figures/architecture/01_system_overview.svg)
+
 本项目适配了vLLM v0.25重构后的 MoE 执行栈：
 
 ```text
