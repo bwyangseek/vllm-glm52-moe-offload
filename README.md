@@ -2,7 +2,7 @@
 
 一套面向 GLM-5.2 FP8 的 基于 vLLM 的CPU–GPU MoE 专家卸载系统， 实现了
 Adaptive Prefill、带 reader 保护的双 uBatch Decode、CUDA Graph 和
-NUMA 感知的 CPU 专家计算。
+NUMA 感知的 CPU 专家计算，通过极致地调度重叠来最大利用GPU、CPU、PCIE资源从而弥补卸载所带来搬运权重损失
 
 ![系统总览](figures/architecture/01_system_overview.svg)
 
