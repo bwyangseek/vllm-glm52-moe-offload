@@ -4,8 +4,7 @@
 Adaptive Prefill、带 reader 保护的双 uBatch Decode、CUDA Graph 和
 NUMA 感知的 CPU 专家计算。
 
-本项目将早期面向 DeepSeek-R1 的卸载原型迁移到了 GLM-5.2 FP8，并适配
-了 vLLM v0.25 重构后的 MoE 执行栈：
+本项目适配了vLLM v0.25重构后的 MoE 执行栈：
 
 ```text
 Router → MoERunner → RoutedExperts → QuantMethod
