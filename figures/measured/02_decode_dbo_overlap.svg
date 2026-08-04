@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-  width="2500" height="1420"
-  viewBox="0 0 2500 1420">
+  width="2500" height="1210"
+  viewBox="0 0 2500 1210">
 <defs>
   <pattern id="diagonalHatch" width="9" height="9"
     patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
@@ -15,7 +15,6 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="1250.0" y="48.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#26323c">GLM-5.2 FP8 Decode DBO overlap：TP0 / layer 5 / 两个 uBatch</text>
-<text x="1250.0" y="80.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#66737d">glm52_main_chunk_random_decode_adaptive_446334.sqlite · Nsight 实测时间戳 · 斜线 sync_kernel 为 CPU 完成轮询</text>
 <line x1="415.2" y1="120.0" x2="415.2" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
 <text x="415.2" y="111.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#66737d">20</text>
 <line x1="501.2" y1="120.0" x2="501.2" y2="465.0" stroke="#dce3e8" stroke-width="1"/>
@@ -239,7 +238,6 @@
 <text x="1979.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">sync/poll wait</text>
 <rect x="2145.0" y="485.0" width="25.0" height="18.0" rx="2.0" fill="#b45d4e" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
 <text x="2179.0" y="501.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#26323c">CPU forwardSparse</text>
-<text x="1250.0" y="565.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" text-anchor="middle" fill="#26323c">当前 post-submit handoff：先提交 CPU-A，再将 B Decode Buffer commit 到 Experts Cache 并入队 GPU-B</text>
 <text x="1250.0" y="596.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="400" text-anchor="middle" fill="#66737d">A = ubatch 0；B = ubatch 1。下图使用同一时间轴，箭头表示必须满足的顺序。</text>
 <text x="360.0" y="659.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">GPU-A / model work</text>
 <rect x="380.0" y="630.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
@@ -253,7 +251,7 @@
 <rect x="380.0" y="925.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
 <text x="360.0" y="1019.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">uBatch B CPU</text>
 <rect x="380.0" y="990.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
-<text x="360.0" y="1119.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">下一次 A handoff</text>
+<text x="360.0" y="1119.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="400" text-anchor="end" fill="#26323c">下一次 A 延迟交接</text>
 <rect x="380.0" y="1090.0" width="2000.0" height="46.0" rx="0.0" fill="#f3f6f8" stroke="#dce3e8" stroke-width="1.5" opacity="1.000"/>
 <rect x="1370.9" y="632.0" width="301.1" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
 <rect x="1672.2" y="632.0" width="3.0" height="38.0" rx="3.0" fill="#3daf70" stroke="#4e6678" stroke-width="1.5" opacity="1.000"/>
@@ -306,10 +304,5 @@
 <text x="758.4" y="847.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#9d5a23">OVERLAP 1：CPU-A ∥ GPU-B，实测覆盖 98.9%</text>
 <rect x="1370.9" y="824.0" width="405.4" height="34.0" rx="9.0" fill="#dff4fb" stroke="#43a6c9" stroke-width="1.5" opacity="1.000"/>
 <text x="1573.6" y="847.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#1e6687">OVERLAP 2：CPU-B ∥ GPU-A，实测覆盖 99.3%</text>
-<rect x="380.0" y="1215.0" width="2000.0" height="150.0" rx="12.0" fill="#e8f4e4" stroke="#86aa78" stroke-width="1.5" opacity="1.000"/>
-<text x="1250.0" y="1253.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#315d2d">一句话理解当前流程</text>
-<text x="1250.0" y="1290.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#315d2d">A 先把 D2H 输入和 submit_kernel 排入通信流，再唤醒 B；B 随后完成短 D2D commit、发布 cache map 并入队 GPU-B。</text>
-<text x="1250.0" y="1323.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#315d2d">因此 GPU-B 不再早于 CPU-A submit 被大量消耗；Decode Buffer 与 reader_done 屏障继续保护 Experts Cache 的正确性。</text>
-<text x="1250.0" y="1351.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="400" text-anchor="middle" fill="#5c6b59">本样本：CPU-A←GPU-B 覆盖 98.9%，CPU-B←GPU-A 覆盖 99.3%；剩余空洞来自两侧 GPU work packet 与 CPU miss 时长仍不匹配。</text>
-<text x="1250.0" y="1400.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#26323c">Time relative to 788.330 ms (microseconds)</text>
+<text x="1250.0" y="1190.0" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#26323c">Time relative to 788.330 ms (microseconds)</text>
 </svg>
