@@ -89,7 +89,7 @@
 <text x="1022.50" y="109.58" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">Experts Cache</text>
 <text x="1022.50" y="129.98" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">E180</text>
 <rect x="940.00" y="165.00" width="165.00" height="50.00" rx="9.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="1022.50" y="195.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">Decode Buffer U2</text>
+<text x="1022.50" y="195.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">Decode 临时专家区 U2</text>
 <rect x="940.00" y="230.00" width="165.00" height="50.00" rx="9.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
 <text x="1022.50" y="251.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">Prefill Buffer</text>
 <text x="1022.50" y="269.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">76 Experts</text>
@@ -132,5 +132,4 @@
 <text x="1320.00" y="340.50" font-family="Times New Roman, Times, serif" font-size="18" font-weight="600" text-anchor="start" fill="#111111">Outputs</text>
 <text x="925.00" y="648.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#89A9DA">Decode path: GPU cache hits + updated experts + CPU compute experts</text>
 <text x="925.00" y="672.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#E32626">Prefill path: GPU cache hits + GPU-prefetched non-resident experts</text>
-<text x="700.00" y="720.00" font-family="Times New Roman, Times, serif" font-size="20" font-weight="600" text-anchor="middle" fill="#111111">Figure 1. Overview of the GLM-5.2 FP8 expert-wise MoE offload system.</text>
 </svg>

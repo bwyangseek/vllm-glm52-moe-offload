@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1040" viewBox="0 0 1700 1040">
+  <title>解码阶段专家缓存安全更新时序</title>
+  <defs>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="1700" height="1040" fill="#ffffff"/>
+  <text x="850" y="47" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#0f172a">解码阶段专家缓存安全更新：三个条件汇合后才能发布新目录</text>
+  <text x="850" y="78" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#64748b">慢 H2D、旧读者边界和下一层延迟交接分别准备；只有短 D2D 正式写入需要串行</text>
+
+  <!-- CPU source of truth. -->
+  <rect x="55" y="118" width="320" height="222" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" filter="url(#s)"/>
+  <text x="215" y="153" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700" fill="#166534">CPU 全量专家权重仓</text>
+  <text x="215" y="181" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#15803d">256 个专家编号，TP 本地分片</text>
+  <g font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#166534">
+    <text x="88" y="225">• FP8 W13 / W2</text>
+    <text x="88" y="255">• 128×128 分块缩放因子</text>
+    <text x="88" y="285">• 锁页主机内存</text>
+    <text x="88" y="315">• 始终保留、只读的权重源</text>
+  </g>
+
+  <!-- Parallel preparation area. -->
+  <rect x="430" y="112" width="1215" height="330" rx="20" fill="#f8fafc" stroke="#64748b" stroke-width="1.8"/>
+  <text x="455" y="145" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700" fill="#0f172a">并行准备阶段：B 搬权重，A 继续读正式缓存</text>
+
+  <!-- B branch. -->
+  <rect x="475" y="180" width="300" height="92" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#s)"/>
+  <text x="625" y="211" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" fill="#78350f">B 规划第 L-1 层更新</text>
+  <text x="625" y="238" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#92400e">选择最多 U2 个新专家</text>
+  <text x="625" y="259" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#92400e">新目录仅保存在待发布张量</text>
+
+  <rect x="835" y="180" width="350" height="92" rx="14" fill="#ffedd5" stroke="#ea580c" stroke-width="2" filter="url(#s)"/>
+  <text x="1010" y="211" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" fill="#9a3412">B：U2 专家权重 H2D</text>
+  <text x="1010" y="238" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#9a3412">CPU → 隔离临时区，不写正式槽位</text>
+  <text x="1010" y="259" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#9a3412">W13 / W2 / 两组 FP8 缩放因子一起搬运</text>
+
+  <!-- A branch. -->
+  <rect x="475" y="318" width="440" height="90" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2" filter="url(#s)"/>
+  <text x="695" y="349" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" fill="#166534">A(L-1) 读取正式专家缓存</text>
+  <text x="695" y="376" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#15803d">缓存专家 MoE + 归约 + 后续模型工作</text>
+  <text x="695" y="398" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#15803d">GPU 读者仍可能在途</text>
+
+  <rect x="1000" y="318" width="300" height="90" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2" filter="url(#s)"/>
+  <text x="1150" y="349" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" fill="#1e3a8a">记录读者完成点</text>
+  <text x="1150" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e40af">reader_done(L-1).record()</text>
+  <text x="1150" y="398" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#1e40af">只是记录事件，不会立即同步 CPU</text>
+
+  <rect x="1345" y="202" width="255" height="184" rx="15" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+  <text x="1472" y="236" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" fill="#5b21b6">第一段重叠</text>
+  <text x="1472" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#6d28d9">B U2 H2D</text>
+  <text x="1472" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#6d28d9">∥</text>
+  <text x="1472" y="324" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" fill="#6d28d9">A(L-1) GPU 工作</text>
+  <text x="1472" y="356" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#6d28d9">慢 H2D 不进入正式缓存</text>
+
+  <line x1="375" y1="220" x2="465" y2="220" stroke="#16a34a" stroke-width="2.2" marker-end="url(#ag)"/>
+  <line x1="775" y1="226" x2="825" y2="226" stroke="#ea580c" stroke-width="2.2" marker-end="url(#ao)"/>
+  <line x1="915" y1="363" x2="990" y2="363" stroke="#2563eb" stroke-width="2.2" marker-end="url(#a)"/>
+
+  <!-- Scheduling gate. -->
+  <text x="850" y="486" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700" fill="#0f172a">调度门控：A 下一层 CPU 未命中先启动，再请求 B 收尾上一层</text>
+
+  <rect x="225" y="520" width="300" height="92" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2" filter="url(#s)"/>
+  <text x="375" y="551" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" fill="#1e3a8a">A 进入第 L 层</text>
+  <text x="375" y="578" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e40af">expert_cache_policy(L)</text>
+  <text x="375" y="599" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#1e40af">生成本层 GPU/CPU 分流</text>
+
+  <rect x="575" y="520" width="310" height="92" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2" filter="url(#s)"/>
+  <text x="730" y="551" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" fill="#991b1b">先提交 CPU-A(L)</text>
+  <text x="730" y="578" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#991b1b">cpu_moe_submit(A, L)</text>
+  <text x="730" y="599" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#991b1b">CPU forwardSparse 获得起跑条件</text>
+
+  <rect x="935" y="520" width="310" height="92" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#s)"/>
+  <text x="1090" y="551" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700" fill="#78350f">再发起跨 uBatch 延迟交接</text>
+  <text x="1090" y="578" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#92400e">请求交接第 L-1 层</text>
+  <text x="1090" y="599" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#92400e">这是正式写入的调度触发条件</text>
+
+  <line x1="525" y1="566" x2="565" y2="566" stroke="#334155" stroke-width="2.2" marker-end="url(#a)"/>
+  <line x1="885" y1="566" x2="925" y2="566" stroke="#334155" stroke-width="2.2" marker-end="url(#a)"/>
+
+  <!-- Three prerequisites converge. -->
+  <rect x="1310" y="510" width="325" height="112" rx="16" fill="#f1f5f9" stroke="#475569" stroke-width="2.2" filter="url(#s)"/>
+  <text x="1472" y="544" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" fill="#0f172a">B 恢复并建立流依赖</text>
+  <text x="1472" y="572" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#334155">H2D 已在 B 的 CUDA 流前序排队</text>
+  <text x="1472" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#334155">wait_event(reader_done(L-1))</text>
+  <text x="1472" y="616" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#475569">同时满足“权重就绪 + 读者安全 + 交接触发”</text>
+
+  <path d="M1185 226 C1370 226 1320 450 1395 500" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ao)"/>
+  <path d="M1300 363 C1450 363 1390 440 1450 500" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#a)"/>
+  <line x1="1245" y1="566" x2="1300" y2="566" stroke="#d97706" stroke-width="2.3" marker-end="url(#ao)"/>
+
+  <!-- Commit, publish, enqueue. -->
+  <rect x="275" y="685" width="330" height="105" rx="15" fill="#fee2e2" stroke="#dc2626" stroke-width="2.2" filter="url(#s)"/>
+  <text x="440" y="719" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" fill="#991b1b">短 D2D 安全写入正式缓存</text>
+  <text x="440" y="748" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#991b1b">隔离临时槽位 → 正式目标槽位</text>
+  <text x="440" y="773" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#991b1b">W13 / W2 / 缩放因子作为同一专家记录提交</text>
+
+  <rect x="685" y="685" width="285" height="105" rx="15" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2" filter="url(#s)"/>
+  <text x="827" y="719" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" fill="#166534">发布匹配的新目录</text>
+  <text x="827" y="748" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#15803d">cache_map / miss_map / policy_sort</text>
+  <text x="827" y="773" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#15803d">目录可见时，正式槽位字节已经就绪</text>
+
+  <rect x="1050" y="685" width="365" height="105" rx="15" fill="#dbeafe" stroke="#2563eb" stroke-width="2.2" filter="url(#s)"/>
+  <text x="1232" y="719" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700" fill="#1e3a8a">入队 GPU-B(L-1) 后续工作</text>
+  <text x="1232" y="748" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#1e40af">缓存专家 MoE + 归约 + 第 L 层注意力/路由</text>
+  <text x="1232" y="773" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#1e40af">与已经启动的 CPU-A(L) 重叠</text>
+
+  <rect x="1460" y="685" width="190" height="105" rx="15" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="1555" y="721" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" fill="#5b21b6">第二段重叠</text>
+  <text x="1555" y="752" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d28d9">CPU-A(L)</text>
+  <text x="1555" y="775" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#6d28d9">∥ GPU-B(L-1)</text>
+
+  <path d="M1472 622 L1472 650 L440 650 L440 675" fill="none" stroke="#dc2626" stroke-width="2.3" marker-end="url(#ar)"/>
+  <line x1="605" y1="737" x2="675" y2="737" stroke="#16a34a" stroke-width="2.3" marker-end="url(#ag)"/>
+  <line x1="970" y1="737" x2="1040" y2="737" stroke="#2563eb" stroke-width="2.3" marker-end="url(#a)"/>
+  <line x1="1415" y1="737" x2="1450" y2="737" stroke="#7c3aed" stroke-width="2.1" marker-end="url(#a)"/>
+
+  <!-- Correctness invariants and trace correspondence. -->
+  <rect x="55" y="845" width="1590" height="140" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="850" y="879" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700" fill="#5b21b6">两个正确性不变量 + 一个调度约束</text>
+
+  <rect x="90" y="903" width="465" height="58" rx="11" fill="#ede9fe" stroke="#8b5cf6"/>
+  <text x="322" y="927" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700" fill="#5b21b6">目录–字节一致</text>
+  <text x="322" y="949" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#6d28d9">目录可见时，权重和缩放因子必须属于同一专家</text>
+
+  <rect x="617" y="903" width="465" height="58" rx="11" fill="#ede9fe" stroke="#8b5cf6"/>
+  <text x="849" y="927" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700" fill="#5b21b6">读者–写者互斥</text>
+  <text x="849" y="949" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#6d28d9">旧 GPU 读者存活时，正式槽位不得被覆盖</text>
+
+  <rect x="1145" y="903" width="465" height="58" rx="11" fill="#ede9fe" stroke="#8b5cf6"/>
+  <text x="1377" y="927" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700" fill="#5b21b6">先提交，再交接</text>
+  <text x="1377" y="949" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#6d28d9">不改变正确性，用来对齐 CPU-A 与 GPU-B 时间窗</text>
+
+  <text x="850" y="1018" text-anchor="middle" font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" fill="#334155">与 Nsight 实测一致：临时区 H2D 可提前重叠；D2D 正式写入和目录发布发生在下一层 CPU 提交所触发的延迟交接之后。</text>
+</svg>

@@ -151,5 +151,4 @@
 <text x="927.00" y="823.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">CPU-B ∥ GPU-A</text>
 <text x="1260.00" y="752.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="500" text-anchor="middle" fill="#111111">Two-uBatch overlap</text>
 <text x="1260.00" y="770.75" font-family="Times New Roman, Times, serif" font-size="15" font-weight="500" text-anchor="middle" fill="#111111">not same-uBatch overlap</text>
-<text x="750.00" y="875.00" font-family="Times New Roman, Times, serif" font-size="20" font-weight="600" text-anchor="middle" fill="#111111">Figure 3. Correctness-preserving Decode Buffer DBO for GLM-5.2 FP8 decode.</text>
 </svg>

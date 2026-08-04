@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="930" viewBox="0 0 1650 930">
+  <title>End-to-end request lifecycle with prefix caching, adaptive prefill and DBO decode</title>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/></filter>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <marker id="ab" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+  </defs>
+  <rect width="1650" height="930" fill="#ffffff"/>
+  <text x="825" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">One request crosses three independent control loops</text>
+  <text x="825" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Prefix reuse decides remaining tokens; adaptive scheduling decides chunk shape; expert offload decides compute placement</text>
+
+  <!-- Entry -->
+  <rect x="55" y="122" width="240" height="86" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+  <text x="175" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1e3a8a">OpenAI request</text>
+  <text x="175" y="181" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e40af">prompt + max_tokens</text>
+  <line x1="295" y1="165" x2="355" y2="165" stroke="#2563eb" stroke-width="2.5" marker-end="url(#ab)"/>
+
+  <!-- Prefix -->
+  <rect x="365" y="105" width="330" height="120" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2" filter="url(#shadow)"/>
+  <text x="530" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#5b21b6">Prefix cache lookup</text>
+  <text x="530" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d28d9">matched KV blocks are reused</text>
+  <text x="530" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d28d9">remaining_tokens = prompt − cached_prefix</text>
+  <line x1="695" y1="165" x2="755" y2="165" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <!-- Scheduler -->
+  <rect x="765" y="105" width="400" height="120" rx="16" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" filter="url(#shadow)"/>
+  <text x="965" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0c4a6e">v1 scheduler</text>
+  <text x="965" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#075985">hard budget + soft chunk + T_hide</text>
+  <text x="965" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#075985">decode_busy → B_actual for this step</text>
+
+  <!-- Branches -->
+  <polyline points="1165,165 1240,165 1240,300 1180,300" fill="none" stroke="#ea580c" stroke-width="2.6" marker-end="url(#ao)"/>
+  <polyline points="965,225 965,300 1030,300" fill="none" stroke="#2563eb" stroke-width="2.6" marker-end="url(#ab)"/>
+  <text x="1000" y="270" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1e40af">prefill work</text>
+  <text x="1248" y="270" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#c2410c">decode-ready</text>
+
+  <!-- Prefill lane -->
+  <rect x="55" y="300" width="1010" height="332" rx="20" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="84" y="336" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#1e3a8a">Prefill lane — latency dominated by chunk shape and H2D coverage</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="95" y="374" width="260" height="102" rx="12" fill="#dbeafe" stroke="#2563eb"/><text x="225" y="405" font-size="17" font-weight="700" fill="#1e3a8a">Chunk B_actual</text><text x="225" y="433" font-size="14" fill="#1e40af">router produces top-8</text><text x="225" y="456" font-size="14" fill="#1e40af">for this token slice</text>
+    <rect x="405" y="374" width="290" height="102" rx="12" fill="#ffedd5" stroke="#ea580c"/><text x="550" y="405" font-size="17" font-weight="700" fill="#9a3412">All-miss prefetch</text><text x="550" y="433" font-size="14" fill="#9a3412">E76 → layer%2 buffer</text><text x="550" y="456" font-size="14" fill="#9a3412">aux stream H2D</text>
+    <rect x="745" y="374" width="280" height="102" rx="12" fill="#dcfce7" stroke="#16a34a"/><text x="885" y="405" font-size="17" font-weight="700" fill="#166534">GPU MoE + model</text><text x="885" y="433" font-size="14" fill="#15803d">native Triton FP8</text><text x="885" y="456" font-size="14" fill="#15803d">writes new KV blocks</text>
+  </g>
+  <line x1="355" y1="425" x2="395" y2="425" stroke="#334155" stroke-width="2.2" marker-end="url(#a)"/>
+  <line x1="695" y1="425" x2="735" y2="425" stroke="#334155" stroke-width="2.2" marker-end="url(#a)"/>
+  <rect x="95" y="520" width="930" height="75" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="560" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1e3a8a">Cross-layer pipeline</text>
+  <text x="560" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e40af">copy(layer L+1) overlaps compute(layer L); tiny tails below T_hide are merged or avoided when possible</text>
+
+  <!-- Decode lane -->
+  <rect x="1100" y="300" width="495" height="510" rx="20" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="1128" y="336" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#9a3412">Decode lane — DBO</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="1140" y="372" width="415" height="75" rx="12" fill="#fef3c7" stroke="#d97706"/><text x="1347" y="401" font-size="17" font-weight="700" fill="#78350f">Split active tokens into uBatch A/B</text><text x="1347" y="426" font-size="14" fill="#92400e">exactly two logical owners</text>
+    <rect x="1140" y="480" width="195" height="116" rx="12" fill="#dcfce7" stroke="#16a34a"/><text x="1237" y="510" font-size="17" font-weight="700" fill="#166534">GPU hit path</text><text x="1237" y="538" font-size="14" fill="#15803d">canonical E180</text><text x="1237" y="562" font-size="14" fill="#15803d">native fused MoE</text><text x="1237" y="584" font-size="14" fill="#15803d">reader_done</text>
+    <rect x="1360" y="480" width="195" height="116" rx="12" fill="#fee2e2" stroke="#dc2626"/><text x="1457" y="510" font-size="17" font-weight="700" fill="#991b1b">CPU miss path</text><text x="1457" y="538" font-size="14" fill="#991b1b">W8A16 sparse</text><text x="1457" y="562" font-size="14" fill="#991b1b">T worker threads</text><text x="1457" y="584" font-size="14" fill="#991b1b">H2D result</text>
+    <rect x="1140" y="632" width="415" height="75" rx="12" fill="#ffedd5" stroke="#ea580c"/><text x="1347" y="660" font-size="17" font-weight="700" fill="#9a3412">临时区备货 → 安全写入 → 发布目录</text><text x="1347" y="685" font-size="14" fill="#9a3412">U2 更新不覆盖正在读取的物理 Slot</text>
+    <rect x="1140" y="740" width="415" height="42" rx="10" fill="#ffffff" stroke="#fdba74"/><text x="1347" y="767" font-size="15" font-weight="700" fill="#9a3412">result = GPU hit output + CPU miss output</text>
+  </g>
+  <line x1="1347" y1="447" x2="1237" y2="470" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1347" y1="447" x2="1457" y2="470" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1237" y1="596" x2="1285" y2="622" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1457" y1="596" x2="1409" y2="622" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1347" y1="707" x2="1347" y2="730" stroke="#ea580c" stroke-width="2" marker-end="url(#ao)"/>
+
+  <!-- KV and output -->
+  <rect x="55" y="688" width="470" height="122" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2" filter="url(#shadow)"/>
+  <text x="290" y="722" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#5b21b6">KV cache pool</text>
+  <text x="290" y="751" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d28d9">prefix blocks + current request blocks</text>
+  <text x="290" y="777" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d28d9">capacity determines concurrency, not expert compute placement</text>
+  <polyline points="885,476 885,660 525,749" fill="none" stroke="#7c3aed" stroke-width="2.2" marker-end="url(#a)"/>
+
+  <rect x="620" y="688" width="400" height="122" rx="16" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow)"/>
+  <text x="820" y="722" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#065f46">Sampler + streaming response</text>
+  <text x="820" y="751" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#047857">one token feeds the next decode step</text>
+  <text x="820" y="777" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#047857">TTFT / TPOT / ITL / P99 are observed here</text>
+  <line x1="1100" y1="761" x2="1030" y2="761" stroke="#059669" stroke-width="2.4" marker-end="url(#a)"/>
+
+  <!-- Feedback -->
+  <path d="M820 688 C820 650,1045 650,1045 235" fill="none" stroke="#0284c7" stroke-width="2.1" stroke-dasharray="8 6" marker-end="url(#ab)"/>
+  <text x="885" y="657" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0369a1">active decode sets decode_busy</text>
+
+  <rect x="150" y="855" width="1350" height="48" rx="12" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="825" y="885" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#334155">Prefix caching reduces how much prefill remains; Adaptive changes when that work runs; Offload changes where its experts execute. They interact, but they are not the same mechanism.</text>
+</svg>

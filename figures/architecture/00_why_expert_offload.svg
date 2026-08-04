@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720">
+  <title>MoE 专家卸载</title>
+  <defs>
+    <style>
+      text { font-family: Arial, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #172033; }
+      .title { font-size: 28px; font-weight: 700; }
+      .group-title { font-size: 22px; font-weight: 700; }
+      .box-title { font-size: 17px; font-weight: 700; }
+      .body { font-size: 14px; font-weight: 500; }
+      .small { font-size: 12px; font-weight: 500; }
+      .frame { fill: #ffffff; stroke: #202833; stroke-width: 2; }
+      .plain { fill: #ffffff; stroke: #465363; stroke-width: 1.6; }
+      .blue { fill: #cad6e8; stroke: #526b91; stroke-width: 1.6; }
+      .yellow { fill: #f8dfa0; stroke: #9d7415; stroke-width: 1.6; }
+      .orange { fill: #f2c5a7; stroke: #9b5d3d; stroke-width: 1.6; }
+      .green { fill: #c9e2b6; stroke: #587d43; stroke-width: 1.6; }
+      .arrow { fill: none; stroke: #202833; stroke-width: 2.4; marker-end: url(#arrow); }
+      .transfer { fill: none; stroke: #e32626; stroke-width: 2.4; marker-end: url(#arrow-red); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#202833"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e32626"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="720" fill="#ffffff"/>
+  <text class="title" x="570" y="46" text-anchor="middle">MoE 专家卸载</text>
+
+  <!-- Full-GPU baseline -->
+  <rect class="frame" x="40" y="82" width="455" height="540" rx="12"/>
+  <text class="group-title" x="267" y="118" text-anchor="middle">所有专家驻留 GPU</text>
+
+  <rect class="yellow" x="75" y="145" width="385" height="225" rx="8"/>
+  <text class="box-title" x="267" y="178" text-anchor="middle">路由专家权重</text>
+  <text class="body" x="267" y="202" text-anchor="middle">每个 MoE 层包含 256 个专家</text>
+  <g fill="#e9c46a" stroke="#9d7415" stroke-width="1">
+    <rect x="105" y="230" width="48" height="38" rx="3"/><rect x="164" y="230" width="48" height="38" rx="3"/>
+    <rect x="223" y="230" width="48" height="38" rx="3"/><rect x="282" y="230" width="48" height="38" rx="3"/>
+    <rect x="341" y="230" width="48" height="38" rx="3"/><rect x="400" y="230" width="30" height="38" rx="3"/>
+    <rect x="105" y="280" width="48" height="38" rx="3"/><rect x="164" y="280" width="48" height="38" rx="3"/>
+    <rect x="223" y="280" width="48" height="38" rx="3"/><rect x="282" y="280" width="48" height="38" rx="3"/>
+    <rect x="341" y="280" width="48" height="38" rx="3"/><rect x="400" y="280" width="30" height="38" rx="3"/>
+  </g>
+  <text class="small" x="267" y="348" text-anchor="middle">驻留显存占用巨大</text>
+
+  <rect class="plain" x="75" y="398" width="180" height="78" rx="7"/>
+  <text class="box-title" x="165" y="430" text-anchor="middle">KV 缓存</text>
+  <text class="small" x="165" y="455" text-anchor="middle">长上下文</text>
+
+  <rect class="plain" x="280" y="398" width="180" height="78" rx="7"/>
+  <text class="box-title" x="370" y="430" text-anchor="middle">运行时显存</text>
+  <text class="small" x="370" y="455" text-anchor="middle">CUDA Graph / 工作空间</text>
+
+  <line x1="85" y1="525" x2="450" y2="525" stroke="#e32626" stroke-width="3"/>
+  <text x="267" y="555" text-anchor="middle" font-size="18" font-weight="700" fill="#c81e1e">显存容量瓶颈</text>
+  <text class="body" x="267" y="583" text-anchor="middle">权重挤压 KV 缓存与运行时显存</text>
+
+  <!-- Sparse activation bridge -->
+  <line class="arrow" x1="512" y1="333" x2="628" y2="333"/>
+  <text x="570" y="282" text-anchor="middle" font-size="15" font-weight="700">利用专家</text>
+  <text x="570" y="303" text-anchor="middle" font-size="15" font-weight="700">稀疏激活</text>
+  <text class="small" x="570" y="325" text-anchor="middle">专家缓存 + 预取</text>
+
+  <!-- Expert-wise offload -->
+  <rect class="frame" x="650" y="82" width="710" height="540" rx="12"/>
+  <text class="group-title" x="1005" y="118" text-anchor="middle">专家卸载异构执行</text>
+  <text class="body" x="1005" y="138" text-anchor="middle">CPU 完整权重 + GPU 热点专家</text>
+
+  <!-- GPU -->
+  <rect class="frame" x="680" y="148" width="650" height="182" rx="9"/>
+  <text class="box-title" x="700" y="168">GPU</text>
+  <rect class="yellow" x="715" y="190" width="210" height="95" rx="7"/>
+  <text class="box-title" x="820" y="225" text-anchor="middle">E180 专家缓存</text>
+  <text class="body" x="820" y="251" text-anchor="middle">热点专家</text>
+  <text class="small" x="820" y="272" text-anchor="middle">每层保留 180 个专家</text>
+
+  <rect class="blue" x="950" y="190" width="165" height="95" rx="7"/>
+  <text class="box-title" x="1032" y="225" text-anchor="middle">临时缓冲区</text>
+  <text class="body" x="1032" y="251" text-anchor="middle">Prefill E76</text>
+  <text class="small" x="1032" y="272" text-anchor="middle">H2D 预取</text>
+
+  <rect class="orange" x="1140" y="190" width="155" height="95" rx="7"/>
+  <text class="box-title" x="1217" y="225" text-anchor="middle">临时缓冲区</text>
+  <text class="body" x="1217" y="251" text-anchor="middle">Decode U2</text>
+  <text class="small" x="1217" y="272" text-anchor="middle">H2D 更新专家</text>
+
+  <!-- PCIe -->
+  <rect x="680" y="350" width="650" height="24" fill="#202020"/>
+  <text x="1005" y="368" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">PCIe</text>
+
+  <!-- CPU -->
+  <rect class="frame" x="680" y="394" width="650" height="145" rx="9"/>
+  <text class="box-title" x="700" y="422">CPU</text>
+  <rect class="green" x="715" y="440" width="360" height="70" rx="7"/>
+  <text class="box-title" x="895" y="469" text-anchor="middle">完整保存全部 256 个 FP8 专家</text>
+  <text class="small" x="895" y="493" text-anchor="middle">CPU Pinned Memory</text>
+
+  <rect class="plain" x="1100" y="440" width="195" height="70" rx="7"/>
+  <text class="box-title" x="1197" y="469" text-anchor="middle">CPU 计算</text>
+  <text class="small" x="1197" y="493" text-anchor="middle">Decode Miss 专家补算</text>
+
+  <!-- Transfers -->
+  <path class="transfer" d="M895,440 L895,385 L1032,385 L1032,287"/>
+  <path class="transfer" d="M1010,440 L1010,405 L1217,405 L1217,287"/>
+  <text x="1037" y="402" font-size="12" font-weight="600" fill="#e32626">H2D</text>
+
+  <!-- Capacity outcome -->
+  <rect class="blue" x="715" y="561" width="270" height="44" rx="7"/>
+  <text class="box-title" x="850" y="589" text-anchor="middle">KV 容量：支持长上下文 / 高并发</text>
+  <rect class="green" x="1010" y="561" width="285" height="44" rx="7"/>
+  <text class="box-title" x="1152" y="589" text-anchor="middle">更高 GPU 部署密度：单机 TP8</text>
+
+  <text x="700" y="676" text-anchor="middle" font-size="18" font-weight="600">将显存容量问题转化为专家缓存管理与计算-搬运重叠问题。</text>
+</svg>

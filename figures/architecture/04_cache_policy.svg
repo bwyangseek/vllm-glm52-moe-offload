@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820">
-<title>GLM-5.2 FP8 intuitive decode cache policy</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1620" viewBox="0 0 1600 1620">
+<title>GLM-5.2 FP8 K2/U2 cache policy token walkthrough</title>
 
 <defs>
   <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3"
@@ -47,148 +47,504 @@
   </filter>
 </defs>
 
-<rect width="1500" height="820" fill="#FFFFFF"/>
-<line x1="75.00" y1="55.00" x2="123.00" y2="55.00" stroke="#111111" stroke-width="2.3" marker-end="url(#arrow-small)"/>
-<text x="133.00" y="61.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="start" fill="#111111">Router / Policy Flow</text>
-<line x1="490.00" y1="55.00" x2="538.00" y2="55.00" stroke="#587D43" stroke-width="2.3" marker-end="url(#arrow-green)"/>
-<text x="548.00" y="61.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="start" fill="#111111">Cache Hit / Protected</text>
-<line x1="905.00" y1="55.00" x2="953.00" y2="55.00" stroke="#E32626" stroke-width="2.3" marker-end="url(#arrow-prefetch-small)"/>
-<text x="963.00" y="61.00" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="start" fill="#111111">Miss / Replacement</text>
-<text x="750.00" y="100.00" font-family="Times New Roman, Times, serif" font-size="20" font-weight="600" text-anchor="middle" fill="#111111">One decode layer: K2 chooses the policy working set, U2 limits cache updates</text>
-<rect x="35.00" y="125.00" width="375.00" height="265.00" rx="9.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="222.00" y="151.00" font-family="Times New Roman, Times, serif" font-size="18" font-weight="600" text-anchor="middle" fill="#111111">1. Select the K2 policy working set</text>
-<text x="54.00" y="203.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="start" fill="#111111">t0</text>
-<rect x="86.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="103.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
-<rect x="124.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="141.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E12</text>
-<rect x="162.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="179.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E3</text>
-<rect x="200.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="217.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
-<rect x="238.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="255.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E5</text>
-<rect x="276.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="293.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E8</text>
-<rect x="314.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="331.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E2</text>
-<rect x="352.00" y="177.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="369.50" y="202.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E41</text>
-<text x="54.00" y="261.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="start" fill="#111111">t1</text>
-<rect x="86.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="103.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
-<rect x="124.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="141.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E23</text>
-<rect x="162.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="179.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E9</text>
-<rect x="200.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="217.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E11</text>
-<rect x="238.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="255.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E2</text>
-<rect x="276.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="293.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E6</text>
-<rect x="314.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="331.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E5</text>
-<rect x="352.00" y="235.00" width="35.00" height="39.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.10"/>
-<text x="369.50" y="260.00" font-family="Times New Roman, Times, serif" font-size="11" font-weight="500" text-anchor="middle" fill="#111111">E20</text>
-<text x="222.00" y="296.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#526B91">K=2: only the highlighted router ranks affect cache policy</text>
-<rect x="90.00" y="320.00" width="265.00" height="52.00" rx="9.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="222.50" y="350.76" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#111111">K2 active set = {E4, E7, E12, E23}</text>
-<rect x="445.00" y="125.00" width="440.00" height="265.00" rx="9.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="665.00" y="151.00" font-family="Times New Roman, Times, serif" font-size="18" font-weight="600" text-anchor="middle" fill="#111111">2. Lookup K2 experts in Experts Cache</text>
-<rect x="485.00" y="182.00" width="165.00" height="92.00" rx="9.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.80"/>
-<text x="567.50" y="214.24" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">HIT</text>
-<text x="567.50" y="233.44" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">E4, E7</text>
-<text x="567.50" y="252.64" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">protect</text>
-<rect x="680.00" y="182.00" width="165.00" height="92.00" rx="9.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.80"/>
-<text x="762.50" y="215.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">CPU</text>
-<text x="762.50" y="233.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">E12, E23</text>
-<text x="762.50" y="251.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">update candidates</text>
-<line x1="410.00" y1="250.00" x2="445.00" y2="250.00" stroke="#111111" stroke-width="2" marker-end="url(#arrow-small)"/>
-<text x="665.00" y="320.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="500" text-anchor="middle" fill="#111111">Hits are protected from eviction.</text>
-<text x="665.00" y="337.50" font-family="Times New Roman, Times, serif" font-size="14" font-weight="500" text-anchor="middle" fill="#111111">Misses remain CPU candidates unless selected by U2.</text>
-<text x="665.00" y="368.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#111111">The complete router top-8 is classified after the update.</text>
-<rect x="920.00" y="125.00" width="545.00" height="265.00" rx="9.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="1192.00" y="151.00" font-family="Times New Roman, Times, serif" font-size="18" font-weight="600" text-anchor="middle" fill="#111111">3. Protect hits and select U2 victims</text>
-<text x="970.00" y="178.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="start" fill="#111111">policy_sort: eviction priority</text>
-<rect x="970.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="996.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E1</text>
-<rect x="1025.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1051.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E9</text>
-<rect x="1080.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1106.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
-<rect x="1135.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1161.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E15</text>
-<rect x="1190.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1216.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
-<rect x="1245.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1271.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
-<rect x="1300.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1326.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
-<rect x="1355.00" y="190.00" width="52.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1381.00" y="216.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
-<text x="1025.00" y="258.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#E32626">victim head</text>
-<text x="1355.00" y="258.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#587D43">protected tail</text>
-<line x1="885.00" y1="250.00" x2="920.00" y2="250.00" stroke="#111111" stroke-width="2" marker-end="url(#arrow-small)"/>
-<rect x="990.00" y="292.00" width="405.00" height="68.00" rx="9.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="1192.50" y="322.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">U=2</text>
-<text x="1192.50" y="340.10" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">E12 replaces E1   ·   E23 replaces E9</text>
-<text x="750.00" y="430.00" font-family="Times New Roman, Times, serif" font-size="19" font-weight="600" text-anchor="middle" fill="#111111">4. Apply the two selected updates</text>
-<text x="65.00" y="465.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="start" fill="#111111">Experts Cache before</text>
-<rect x="65.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="88.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E1</text>
-<rect x="114.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="137.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
-<rect x="163.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="186.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
-<rect x="212.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="235.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E9</text>
-<rect x="261.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="284.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E15</text>
-<rect x="310.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="333.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
-<rect x="359.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="382.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
-<rect x="408.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="431.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E180</text>
-<rect x="560.00" y="454.00" width="180.00" height="88.00" rx="9.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="650.00" y="493.84" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">Decode Buffer U2</text>
-<text x="650.00" y="513.04" font-family="Times New Roman, Times, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111111">E12   ·   E23</text>
-<text x="875.00" y="465.00" font-family="Times New Roman, Times, serif" font-size="15" font-weight="600" text-anchor="start" fill="#111111">Experts Cache after update</text>
-<rect x="875.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="898.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E12</text>
-<rect x="924.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="947.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E4</text>
-<rect x="973.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="996.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E7</text>
-<rect x="1022.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1045.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E23</text>
-<rect x="1071.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1094.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E15</text>
-<rect x="1120.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1143.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E31</text>
-<rect x="1169.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1192.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">···</text>
-<rect x="1218.00" y="477.00" width="46.00" height="40.00" rx="3.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#111111" stroke-width="1.20"/>
-<text x="1241.00" y="503.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="500" text-anchor="middle" fill="#111111">E180</text>
-<line x1="457.00" y1="497.00" x2="560.00" y2="497.00" stroke="#E32626" stroke-width="2.2" marker-end="url(#arrow-prefetch-small)"/>
-<text x="508.00" y="485.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#E32626">victim slots E1, E9</text>
-<line x1="740.00" y1="497.00" x2="875.00" y2="497.00" stroke="#E32626" stroke-width="2.2" marker-end="url(#arrow-prefetch-small)"/>
-<text x="807.00" y="485.00" font-family="Times New Roman, Times, serif" font-size="13" font-weight="600" text-anchor="middle" fill="#E32626">D2D commit + publish</text>
-<text x="650.00" y="565.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="500" text-anchor="middle" fill="#111111">Selected misses are staged in Decode Buffer; only the short commit writes Experts Cache.</text>
-<text x="750.00" y="620.00" font-family="Times New Roman, Times, serif" font-size="19" font-weight="600" text-anchor="middle" fill="#111111">5. Execute all router top-8 routes using the published map</text>
-<rect x="135.00" y="652.00" width="445.00" height="78.00" rx="9.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="357.50" y="686.58" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">GPU fused MoE</text>
-<text x="357.50" y="706.98" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">existing cache hits + U2 updated experts</text>
-<rect x="680.00" y="652.00" width="390.00" height="78.00" rx="9.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#111111" stroke-width="1.80"/>
-<text x="875.00" y="686.58" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">CPU forwardSparse</text>
-<text x="875.00" y="706.98" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="middle" fill="#111111">remaining non-resident experts</text>
-<circle cx="1160.00" cy="691.00" r="27.00" fill="#FFFFFF" stroke="#111111" stroke-width="1.7"/>
-<text x="1160.00" y="701.00" font-family="Times New Roman, Times, serif" font-size="29" font-weight="400" text-anchor="middle" fill="#111111">+</text>
-<polyline points="580.00,691.00 610.00,691.00 610.00,635.00 1160.00,635.00 1160.00,664.00" fill="none" stroke="#111111" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-small)"/>
-<line x1="1070.00" y1="691.00" x2="1133.00" y2="691.00" stroke="#111111" stroke-width="2" marker-end="url(#arrow-small)"/>
-<line x1="1187.00" y1="691.00" x2="1360.00" y2="691.00" stroke="#111111" stroke-width="2.1" marker-end="url(#arrow-small)"/>
-<text x="1375.00" y="697.00" font-family="Times New Roman, Times, serif" font-size="17" font-weight="600" text-anchor="start" fill="#111111">MoE output</text>
-<text x="750.00" y="756.00" font-family="Times New Roman, Times, serif" font-size="14" font-weight="600" text-anchor="middle" fill="#111111">K2 changes cache protection/update decisions; it does not change GLM&#x27;s top-8 routing semantics.</text>
-<text x="750.00" y="804.00" font-family="Times New Roman, Times, serif" font-size="20" font-weight="600" text-anchor="middle" fill="#111111">Figure 4. Decode K2/U2 cache policy: protect hits, replace two victims, then split GPU and CPU work.</text>
+<rect width="1600" height="1620" fill="#FFFFFF"/>
+<text x="800.00" y="48.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#17324D">Experts Cache Policy</text>
+<rect x="45.00" y="76.00" width="28.00" height="22.00" rx="3.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.30"/>
+<text x="85.00" y="93.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2937">K2 Policy Rank</text>
+<rect x="350.00" y="76.00" width="28.00" height="22.00" rx="3.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.30"/>
+<text x="390.00" y="93.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2937">GPU 已驻留 / 受保护</text>
+<rect x="655.00" y="76.00" width="28.00" height="22.00" rx="3.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.30"/>
+<text x="695.00" y="93.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2937">本次换入 GPU</text>
+<rect x="960.00" y="76.00" width="28.00" height="22.00" rx="3.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.30"/>
+<text x="1000.00" y="93.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2937">最终由 CPU 计算</text>
+<rect x="1265.00" y="76.00" width="28.00" height="22.00" rx="3.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#E32626" stroke-width="1.30"/>
+<text x="1305.00" y="93.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2937">被驱逐</text>
+<rect x="40.00" y="120.00" width="1520.00" height="280.00" rx="10.00" fill="#F8FAFC" fill-opacity="1.000" stroke="#AAB4C0" stroke-width="1.50"/>
+<text x="70.00" y="154.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#1F2937">1. 输入：一组 Token 的 Top-8 Route</text>
+<text x="1530.00" y="154.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#526B91">K=2：每个 Token 只有前两位写入 s_in_topk</text>
+<text x="75.00" y="209.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t0</text>
+<rect x="125.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="193.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E7</text>
+<text x="193.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 1</text>
+<rect x="270.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="338.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E12</text>
+<text x="338.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 2</text>
+<rect x="415.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="483.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E3</text>
+<text x="483.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 3</text>
+<rect x="560.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="628.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E31</text>
+<text x="628.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 4</text>
+<rect x="705.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="773.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E5</text>
+<text x="773.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 5</text>
+<rect x="850.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="918.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E8</text>
+<text x="918.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 6</text>
+<rect x="995.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1063.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E2</text>
+<text x="1063.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 7</text>
+<rect x="1140.00" y="180.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1208.00" y="198.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E41</text>
+<text x="1208.00" y="215.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 8</text>
+<text x="75.00" y="259.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t1</text>
+<rect x="125.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="193.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E4</text>
+<text x="193.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 1</text>
+<rect x="270.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="338.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E23</text>
+<text x="338.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 2</text>
+<rect x="415.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="483.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E9</text>
+<text x="483.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 3</text>
+<rect x="560.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="628.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E11</text>
+<text x="628.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 4</text>
+<rect x="705.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="773.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E2</text>
+<text x="773.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 5</text>
+<rect x="850.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="918.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E6</text>
+<text x="918.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 6</text>
+<rect x="995.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1063.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E5</text>
+<text x="1063.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 7</text>
+<rect x="1140.00" y="230.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1208.00" y="248.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E20</text>
+<text x="1208.00" y="265.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 8</text>
+<text x="75.00" y="309.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t2</text>
+<rect x="125.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="193.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E7</text>
+<text x="193.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 1</text>
+<rect x="270.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="338.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E18</text>
+<text x="338.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 2</text>
+<rect x="415.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="483.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E4</text>
+<text x="483.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 3</text>
+<rect x="560.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="628.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E3</text>
+<text x="628.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 4</text>
+<rect x="705.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="773.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E9</text>
+<text x="773.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 5</text>
+<rect x="850.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="918.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E6</text>
+<text x="918.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 6</text>
+<rect x="995.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1063.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E12</text>
+<text x="1063.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 7</text>
+<rect x="1140.00" y="280.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1208.00" y="298.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E15</text>
+<text x="1208.00" y="315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 8</text>
+<text x="75.00" y="359.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t3</text>
+<rect x="125.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="193.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E25</text>
+<text x="193.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 1</text>
+<rect x="270.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.25"/>
+<text x="338.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E4</text>
+<text x="338.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 2</text>
+<rect x="415.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="483.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E11</text>
+<text x="483.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 3</text>
+<rect x="560.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="628.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E7</text>
+<text x="628.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 4</text>
+<rect x="705.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="773.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E9</text>
+<text x="773.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 5</text>
+<rect x="850.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="918.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E3</text>
+<text x="918.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 6</text>
+<rect x="995.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1063.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E5</text>
+<text x="1063.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 7</text>
+<rect x="1140.00" y="330.00" width="136.00" height="40.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1208.00" y="348.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E2</text>
+<text x="1208.00" y="365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">rank 8</text>
+<rect x="1315.00" y="195.00" width="205.00" height="155.00" rx="8.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#526B91" stroke-width="1.40"/>
+<text x="1417.00" y="226.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937">K2 去重集合</text>
+<text x="1417.00" y="243.92" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937">{E4, E7, E12,</text>
+<text x="1417.00" y="261.84" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937">E18, E23, E25}</text>
+<text x="1417.00" y="279.76" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937"></text>
+<text x="1417.00" y="297.68" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937">Rank 3–8 不影响策略</text>
+<text x="1417.00" y="315.60" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937">但仍参加最终计算</text>
+<rect x="40.00" y="425.00" width="1520.00" height="225.00" rx="10.00" fill="#F8FAFC" fill-opacity="1.000" stroke="#AAB4C0" stroke-width="1.50"/>
+<text x="70.00" y="459.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#1F2937">2. 构造 Expert-Indexed 状态：命中还是 Miss</text>
+<text x="300.00" y="497.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">expert_id</text>
+<rect x="330.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="373.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E1</text>
+<rect x="420.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="463.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E3</text>
+<rect x="510.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="553.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E4</text>
+<rect x="600.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="643.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E7</text>
+<rect x="690.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="733.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E9</text>
+<rect x="780.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="823.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E11</text>
+<rect x="870.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="913.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E12</text>
+<rect x="960.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1003.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E18</text>
+<rect x="1050.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1093.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E23</text>
+<rect x="1140.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1183.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E25</text>
+<rect x="1230.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1273.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E31</text>
+<rect x="1320.00" y="477.00" width="86.00" height="30.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1363.00" y="496.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E180</text>
+<text x="300.00" y="531.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">cache_map before</text>
+<rect x="330.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="373.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="420.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="463.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">4</text>
+<rect x="510.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="553.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="600.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="643.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">2</text>
+<rect x="690.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="733.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">3</text>
+<rect x="780.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="823.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">6</text>
+<rect x="870.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="913.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="960.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1003.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="1050.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1093.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="1140.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1183.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="1230.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1273.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">5</text>
+<rect x="1320.00" y="511.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1363.00" y="530.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">179</text>
+<text x="300.00" y="565.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">s_in_topk</text>
+<rect x="330.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="373.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="420.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="463.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="510.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="553.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="600.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="643.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="690.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="733.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="780.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="823.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="870.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="913.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="960.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1003.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="1050.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1093.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="1140.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#CBD8EB" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1183.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="1230.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1273.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1320.00" y="545.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1363.00" y="564.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<text x="300.00" y="599.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">s_in_match</text>
+<rect x="330.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="373.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="420.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="463.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="510.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="553.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="600.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="643.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="690.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="733.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="780.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="823.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="870.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="913.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="960.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1003.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1050.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1093.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1140.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1183.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1230.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1273.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1320.00" y="579.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1363.00" y="598.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<text x="300.00" y="633.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">is_miss</text>
+<rect x="330.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="373.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="420.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="463.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="510.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="553.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="600.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="643.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="690.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="733.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="780.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="823.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="870.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="913.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="960.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1003.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="1050.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1093.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="1140.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1183.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="1230.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1273.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1320.00" y="613.00" width="86.00" height="30.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1363.00" y="632.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="40.00" y="675.00" width="1520.00" height="205.00" rx="10.00" fill="#F8FAFC" fill-opacity="1.000" stroke="#AAB4C0" stroke-width="1.50"/>
+<text x="70.00" y="709.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#1F2937">3. 保护命中，并从 Miss List 中选择 U2</text>
+<text x="300.00" y="750.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">s_miss_list</text>
+<rect x="330.00" y="725.00" width="96.00" height="42.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.25"/>
+<text x="378.00" y="744.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E12</text>
+<text x="378.00" y="761.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">miss[0]</text>
+<rect x="435.00" y="725.00" width="96.00" height="42.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.25"/>
+<text x="483.00" y="744.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E18</text>
+<text x="483.00" y="761.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">miss[1]</text>
+<rect x="540.00" y="725.00" width="96.00" height="42.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="588.00" y="744.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E23</text>
+<text x="588.00" y="761.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">miss[2]</text>
+<rect x="645.00" y="725.00" width="96.00" height="42.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="693.00" y="744.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E25</text>
+<text x="693.00" y="761.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">miss[3]</text>
+<text x="770.00" y="750.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2937">U=2 只换入前两个 Miss；E23/E25 继续留在 CPU</text>
+<text x="300.00" y="807.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">policy_sort before</text>
+<rect x="330.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="380.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E1</text>
+<rect x="435.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="485.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E4</text>
+<rect x="540.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="590.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E7</text>
+<rect x="645.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="695.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E9</text>
+<rect x="750.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="800.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E3</text>
+<rect x="855.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="905.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E31</text>
+<rect x="960.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1010.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E11</text>
+<rect x="1065.00" y="786.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1115.50" y="806.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E180</text>
+<text x="300.00" y="845.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">protect hits 后</text>
+<rect x="330.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="380.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E1</text>
+<rect x="435.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="485.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E9</text>
+<rect x="540.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="590.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E3</text>
+<rect x="645.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="695.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E31</text>
+<rect x="750.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="800.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E11</text>
+<rect x="855.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="905.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E180</text>
+<rect x="960.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1010.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E7</text>
+<rect x="1065.00" y="824.00" width="101.00" height="32.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1115.50" y="844.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E4</text>
+<text x="350.00" y="872.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start" fill="#E32626">← eviction head</text>
+<text x="1145.00" y="872.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="end" fill="#587D43">protected tail →</text>
+<rect x="40.00" y="905.00" width="1520.00" height="300.00" rx="10.00" fill="#F8FAFC" fill-opacity="1.000" stroke="#AAB4C0" stroke-width="1.50"/>
+<text x="70.00" y="939.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#1F2937">4. U2 交换：换入两个 Miss，驱逐两个未保护专家</text>
+<rect x="85.00" y="960.00" width="680.00" height="125.00" rx="8.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#AAB4C0" stroke-width="1.30"/>
+<text x="105.00" y="986.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start" fill="#1F2937">Swap A</text>
+<text x="205.00" y="1024.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">GPU slot 0</text>
+<rect x="225.00" y="997.00" width="105.00" height="48.00" rx="4.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#E32626" stroke-width="1.25"/>
+<text x="277.50" y="1019.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E1</text>
+<text x="277.50" y="1036.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">evict</text>
+<line x1="340.00" y1="1021.00" x2="400.00" y2="1021.00" stroke="#E32626" stroke-width="2" marker-end="url(#arrow-prefetch-small)"/>
+<rect x="410.00" y="997.00" width="105.00" height="48.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.25"/>
+<text x="462.50" y="1019.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E12</text>
+<text x="462.50" y="1036.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU new</text>
+<text x="640.00" y="1024.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937">CPU pos p12</text>
+<text x="640.00" y="1055.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#1F2937">E12 离开 CPU Slot</text>
+<text x="640.00" y="1070.36" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#1F2937">E1 接管该 CPU Slot</text>
+<text x="425.00" y="1071.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#E32626">copy_map[E12] = 0</text>
+<rect x="815.00" y="960.00" width="680.00" height="125.00" rx="8.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#AAB4C0" stroke-width="1.30"/>
+<text x="835.00" y="986.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start" fill="#1F2937">Swap B</text>
+<text x="935.00" y="1024.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">GPU slot 3</text>
+<rect x="955.00" y="997.00" width="105.00" height="48.00" rx="4.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#E32626" stroke-width="1.25"/>
+<text x="1007.50" y="1019.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E9</text>
+<text x="1007.50" y="1036.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">evict</text>
+<line x1="1070.00" y1="1021.00" x2="1130.00" y2="1021.00" stroke="#E32626" stroke-width="2" marker-end="url(#arrow-prefetch-small)"/>
+<rect x="1140.00" y="997.00" width="105.00" height="48.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.25"/>
+<text x="1192.50" y="1019.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E18</text>
+<text x="1192.50" y="1036.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU new</text>
+<text x="1370.00" y="1024.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2937">CPU pos p18</text>
+<text x="1370.00" y="1055.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#1F2937">E18 离开 CPU Slot</text>
+<text x="1370.00" y="1070.36" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#1F2937">E9 接管该 CPU Slot</text>
+<text x="1155.00" y="1071.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#E32626">copy_map[E18] = 3</text>
+<text x="300.00" y="1119.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">expert_id</text>
+<rect x="420.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="478.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E1</text>
+<rect x="540.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="598.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E4</text>
+<rect x="660.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="718.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E7</text>
+<rect x="780.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="838.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E9</text>
+<rect x="900.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="958.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E12</text>
+<rect x="1020.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1078.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E18</text>
+<rect x="1140.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1198.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E23</text>
+<rect x="1260.00" y="1100.00" width="116.00" height="28.00" rx="4.00" fill="#EFEFEF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1318.00" y="1118.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">E25</text>
+<text x="300.00" y="1151.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">cache_map after</text>
+<rect x="420.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="478.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="540.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="598.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">1</text>
+<rect x="660.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="718.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">2</text>
+<rect x="780.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="838.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="900.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="958.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1020.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1078.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">3</text>
+<rect x="1140.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1198.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="1260.00" y="1132.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1318.00" y="1150.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<text x="300.00" y="1183.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">copy_map</text>
+<rect x="420.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="478.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="540.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="598.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="660.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="718.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="780.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="838.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="900.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="958.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">0</text>
+<rect x="1020.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1078.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">3</text>
+<rect x="1140.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1198.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="1260.00" y="1164.00" width="116.00" height="28.00" rx="4.00" fill="#FFFFFF" fill-opacity="1.000" stroke="#7A8490" stroke-width="1.25"/>
+<text x="1318.00" y="1182.32" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1F2937">-1</text>
+<rect x="40.00" y="1230.00" width="1520.00" height="380.00" rx="10.00" fill="#F8FAFC" fill-opacity="1.000" stroke="#AAB4C0" stroke-width="1.50"/>
+<text x="70.00" y="1264.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#1F2937">5. 执行：用更新后的 cache_map 重新判断完整 Top-8</text>
+<text x="1530.00" y="1264.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="end" fill="#1F2937">cpu_topk：GPU Route 写 -1；CPU Route 保留 expert_id</text>
+<g transform="translate(110 0)">
+<text x="72.00" y="1315.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t0</text>
+<rect x="115.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="183.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E7</text>
+<text x="183.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="260.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.25"/>
+<text x="328.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E12</text>
+<text x="328.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU new</text>
+<rect x="405.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="473.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E3</text>
+<text x="473.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="550.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="618.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E31</text>
+<text x="618.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="695.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="763.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E5</text>
+<text x="763.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="840.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="908.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E8</text>
+<text x="908.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="985.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="1053.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E2</text>
+<text x="1053.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="1130.00" y="1285.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="1198.00" y="1307.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E41</text>
+<text x="1198.00" y="1324.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<text x="72.00" y="1373.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t1</text>
+<rect x="115.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="183.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E4</text>
+<text x="183.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="260.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="328.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E23</text>
+<text x="328.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="405.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#E32626" stroke-width="1.25"/>
+<text x="473.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E9</text>
+<text x="473.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU evicted</text>
+<rect x="550.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="618.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E11</text>
+<text x="618.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="695.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="763.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E2</text>
+<text x="763.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="840.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="908.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E6</text>
+<text x="908.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="985.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="1053.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E5</text>
+<text x="1053.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="1130.00" y="1343.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="1198.00" y="1365.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E20</text>
+<text x="1198.00" y="1382.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<text x="72.00" y="1431.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t2</text>
+<rect x="115.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="183.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E7</text>
+<text x="183.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="260.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.25"/>
+<text x="328.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E18</text>
+<text x="328.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU new</text>
+<rect x="405.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="473.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E4</text>
+<text x="473.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="550.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="618.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E3</text>
+<text x="618.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="695.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#E32626" stroke-width="1.25"/>
+<text x="763.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E9</text>
+<text x="763.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU evicted</text>
+<rect x="840.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="908.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E6</text>
+<text x="908.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="985.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#F8DFA0" fill-opacity="1.000" stroke="#9D7415" stroke-width="1.25"/>
+<text x="1053.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E12</text>
+<text x="1053.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU new</text>
+<rect x="1130.00" y="1401.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="1198.00" y="1423.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E15</text>
+<text x="1198.00" y="1440.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<text x="72.00" y="1489.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">t3</text>
+<rect x="115.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="183.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E25</text>
+<text x="183.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="260.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="328.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E4</text>
+<text x="328.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="405.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="473.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E11</text>
+<text x="473.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="550.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="618.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E7</text>
+<text x="618.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="695.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#F6D3D3" fill-opacity="1.000" stroke="#E32626" stroke-width="1.25"/>
+<text x="763.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E9</text>
+<text x="763.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU evicted</text>
+<rect x="840.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.25"/>
+<text x="908.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E3</text>
+<text x="908.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">GPU</text>
+<rect x="985.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="1053.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E5</text>
+<text x="1053.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+<rect x="1130.00" y="1459.00" width="136.00" height="48.00" rx="4.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.25"/>
+<text x="1198.00" y="1481.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">E2</text>
+<text x="1198.00" y="1498.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2937">CPU</text>
+</g>
+<rect x="210.00" y="1535.00" width="405.00" height="55.00" rx="6.00" fill="#C9E2B6" fill-opacity="1.000" stroke="#587D43" stroke-width="1.40"/>
+<text x="412.00" y="1558.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">topk_ids + cache_map(after)</text>
+<text x="412.00" y="1574.64" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">→ GPU FP8 Fused MoE</text>
+<rect x="685.00" y="1535.00" width="380.00" height="55.00" rx="6.00" fill="#F2C5A7" fill-opacity="1.000" stroke="#9B5D3D" stroke-width="1.40"/>
+<text x="875.00" y="1558.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">cpu_topk</text>
+<text x="875.00" y="1574.64" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">→ CPU forwardSparse</text>
+<circle cx="1130.00" cy="1562.00" r="23.00" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+<text x="1130.00" y="1571.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="26" font-weight="400" text-anchor="middle" fill="#1F2937">+</text>
+<polyline points="615.00,1562.00 650.00,1562.00 650.00,1517.00 1130.00,1517.00 1130.00,1539.00" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-small)"/>
+<line x1="1065.00" y1="1562.00" x2="1107.00" y2="1562.00" stroke="#111111" stroke-width="1.8" marker-end="url(#arrow-small)"/>
+<line x1="1153.00" y1="1562.00" x2="1350.00" y2="1562.00" stroke="#111111" stroke-width="2" marker-end="url(#arrow-small)"/>
+<text x="1365.00" y="1568.00" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start" fill="#1F2937">Weighted MoE Output</text>
+
 </svg>
