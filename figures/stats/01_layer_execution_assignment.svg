@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1060" viewBox="0 0 1800 1060">
-<title>Layer-wise decode expert execution assignment</title>
+<title>Decode Expert Execution by Layer</title>
 
 <defs>
   <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3"
@@ -48,8 +48,7 @@
 </defs>
 
 <rect width="1800" height="1060" fill="#FFFFFF"/>
-<text x="900.00" y="54.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#17324D">Where Each Decode Layer Executes Its Experts</text>
-<text x="900.00" y="86.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="400" text-anchor="middle" fill="#64748B">E180 / K2 / U2 · resident GPU hits + updated GPU experts + CPU-computed experts</text>
+<text x="900.00" y="54.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#17324D">Decode Expert Execution by Layer</text>
 <rect x="55.00" y="120.00" width="1690.00" height="455.00" rx="14.00" fill="#F5F8FC" fill-opacity="1.000" stroke="#D9E1EA" stroke-width="1.50"/>
 <text x="82.00" y="158.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" text-anchor="start" fill="#1F2937">A. Average unique experts per layer sample</text>
 <line x1="125.00" y1="510.00" x2="1710.00" y2="510.00" stroke="#D9E1EA" stroke-width="1"/>
@@ -307,7 +306,7 @@
 <text x="1699.43" y="542.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" text-anchor="middle" fill="#64748B">77</text>
 <text x="917.50" y="565.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">MoE layer</text>
 <rect x="770.00" y="137.00" width="18.00" height="18.00" rx="3.00" fill="#55A57A" fill-opacity="1.000" stroke="#55A57A" stroke-width="0.00"/>
-<text x="797.00" y="152.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="start" fill="#1F2937">GPU resident cache hit</text>
+<text x="797.00" y="152.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="start" fill="#1F2937">GPU cache hit</text>
 <rect x="1005.00" y="137.00" width="18.00" height="18.00" rx="3.00" fill="#F4A261" fill-opacity="1.000" stroke="#F4A261" stroke-width="0.00"/>
 <text x="1032.00" y="152.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="start" fill="#1F2937">GPU updated expert</text>
 <rect x="1240.00" y="137.00" width="18.00" height="18.00" rx="3.00" fill="#E76F51" fill-opacity="1.000" stroke="#E76F51" stroke-width="0.00"/>
@@ -346,6 +345,5 @@
 <line x1="1500.00" y1="643.00" x2="1530.00" y2="643.00" stroke="#276B9E" stroke-width="4"/>
 <text x="1540.00" y="648.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="start" fill="#1F2937">unique-expert hit rate</text>
 <rect x="270.00" y="955.00" width="1260.00" height="65.00" rx="12.00" fill="#EAF8EF" fill-opacity="1.000" stroke="#55A57A" stroke-width="1.50"/>
-<text x="900.00" y="983.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#2F7D58">Mean per decode layer: 13.39 resident GPU experts + 0.07 updated GPU experts + 1.16 CPU experts</text>
-<text x="900.00" y="1008.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#64748B">Orange bands mark Layer 3-9 and Layer 76-77, the main remaining pressure regions.</text>
+<text x="900.00" y="983.00" font-family="Inter, Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#2F7D58">Mean per decode layer: 13.39 GPU hit experts + 0.07 updated GPU experts + 1.16 CPU experts</text>
 </svg>
