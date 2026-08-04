@@ -4,16 +4,6 @@
 
 ![系统总览](figures/architecture/01_system_overview.svg)
 
-本项目适配了vLLM v0.25重构后的 MoE 执行栈：
-
-```text
-Router → MoERunner → RoutedExperts → QuantMethod
-```
-
-系统没有重新实现 GLM 的模型逻辑，而是保留原生 Router、DSA、IndexShare
-和量化路径，在 `RoutedExperts` 下方增加专家缓存所有权管理和 CPU/GPU
-混合执行。
-
 在 8K～16K 混合长度 workload 上，当前单机 TP8 系统使用一半数量的 H20，
 达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
 吞吐**。
