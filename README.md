@@ -33,8 +33,8 @@ Workspace 一起完整驻留在目标 TP8 H20 部署中。若按整层搬运 MoE
 
 本系统采用专家粒度的 CPU–GPU 分层：
 
-1. 在 GPU 上保留容量受限的专家工作集；
-2. 在 NUMA 本地的 Pinned CPU DRAM 中保存全部专家权重；
+1. 在 GPU 上保留容量受限的专家缓存；
+2. 在 CPU DRAM 中保存全部专家权重；
 3. 根据 Prefill 和 Decode 的计算形态采用不同卸载策略；
 4. 将专家搬运或 CPU Miss 计算与有效 GPU 工作重叠；
 5. 使用独立 Buffer 隔离慢速搬运和正在被读取的 Experts Cache。
