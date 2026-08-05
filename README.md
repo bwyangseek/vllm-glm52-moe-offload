@@ -4,6 +4,7 @@
 
 ![系统总览](figures/architecture/01_system_overview.svg)
 
+![核心单uBatch](figures/architecture/08_decode_source_timeline.svg)
 在 8K～16K 混合长度 workload 上，当前单机 TP8 系统使用一半数量的 H20，
 达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
 吞吐**，每卡输出效率提高约 **57.6%**
