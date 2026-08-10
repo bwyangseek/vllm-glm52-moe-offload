@@ -9,6 +9,10 @@
 达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
 吞吐**，每卡输出效率提高约 **57.6%**
 
+![真实 Adaptive Prefill 重叠](figures/measured/01_prefill_prefetch_overlap.svg)
+
+![真实 Decode DBO 重叠](figures/measured/02_decode_dbo_overlap.svg)
+
 > 本仓库只包含该系统面向公开展示的设计与评测材料，源码未包含在仓库中。
 
 ## 系统配置
