@@ -56,16 +56,7 @@ GLM 的全部 Top-8 Route 都参与最终 MoE 计算，但 K2 只将 Router 排�
 
 ```text
 GPU Resident Hits + GPU Updated Experts + CPU Computed Experts
-
-![核心单uBatch](figures/architecture/08_decode_source_timeline.svg)
-在 8K～16K 混合长度 workload 上，当前单机 TP8 系统使用一半数量的 H20，
-达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
-吞吐**，每卡输出效率提高约 **57.6%**
-
-![真实 Adaptive Prefill 重叠](figures/measured/01_prefill_prefetch_overlap.svg)
-
-![真实 Decode DBO 重叠](figures/measured/02_decode_dbo_overlap.svg)
-
+```
 ## Stats：专家与缓存统计
 
 ### 每层专家执行位置
@@ -81,6 +72,17 @@ GPU Resident Hits + GPU Updated Experts + CPU Computed Experts
 ```
 
 Layer 3～9 是当前最主要的 CPU 压力区，Layer 76～77 是较小的次级尾部。
+
+![核心单uBatch](figures/architecture/08_decode_source_timeline.svg)
+在 8K～16K 混合长度 workload 上，当前单机 TP8 系统使用一半数量的 H20，
+达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
+吞吐**，每卡输出效率提高约 **57.6%**
+
+![真实 Adaptive Prefill 重叠](figures/measured/01_prefill_prefetch_overlap.svg)
+
+![真实 Decode DBO 重叠](figures/measured/02_decode_dbo_overlap.svg)
+
+
 
 > 本仓库只包含该系统面向公开展示的设计与评测材料，源码未包含在仓库中。
 
