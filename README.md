@@ -7,7 +7,7 @@
 ### Prefill：GPU Prefetch 与双 Buffer
 
 ![Prefill Prefetch 架构](figures/architecture/02_prefill_prefetch.svg)
-
+![真实 Adaptive Prefill 重叠](figures/measured/01_prefill_prefetch_overlap.svg)
 Prefill 阶段具有足够大的 Token Batch，可以用 GPU 计算隐藏专家搬运。E180
 常驻 Experts Cache，其余 E76 从 Pinned DRAM 更新到按层奇偶复用的 Prefill
 Buffer，最终所有 Hit/Miss Route 都在 GPU 上完成计算。
@@ -79,7 +79,7 @@ GPU Resident Hits + GPU Updated Experts + CPU Computed Experts
 达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
 吞吐**，每卡输出效率提高约 **57.6%**
 
-![真实 Adaptive Prefill 重叠](figures/measured/01_prefill_prefetch_overlap.svg)
+
 
 ![真实 Decode DBO 重叠](figures/measured/02_decode_dbo_overlap.svg)
 
