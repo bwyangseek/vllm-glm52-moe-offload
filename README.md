@@ -41,7 +41,7 @@ Decode Buffer 与正在使用的 Experts Cache 相互独立。慢速 H2D Stage �
 需要等待上一位 Reader 完成。提交完成后再发布匹配的 Cache Map，从而保护
 Cache Slot 所有权。
 
-## Stats：专家与缓存统计
+## Decode Stats：专家与缓存统计
 
 ### 每层专家执行位置
 
