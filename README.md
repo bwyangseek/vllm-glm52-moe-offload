@@ -26,6 +26,7 @@ Scheduler 综合以下信息选择实际 Prefill Chunk：
 ### Decode：双 uBatch CPU/GPU 重叠
 
 ![Decode DBO 架构](figures/architecture/03_decode_dbo.svg)
+![真实 Decode DBO 重叠](figures/measured/02_decode_dbo_overlap.svg)
 
 Decode 单步 Token 数较少，无法用 GPU 计算摊平一次完整的 E76 搬运，因此
 采用 CPU/GPU 混合执行：
@@ -78,12 +79,6 @@ GPU Resident Hits + GPU Updated Experts + CPU Computed Experts
 在 8K～16K 混合长度 workload 上，当前单机 TP8 系统使用一半数量的 H20，
 达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
 吞吐**，每卡输出效率提高约 **57.6%**
-
-
-
-![真实 Decode DBO 重叠](figures/measured/02_decode_dbo_overlap.svg)
-
-
 
 > 本仓库只包含该系统面向公开展示的设计与评测材料，源码未包含在仓库中。
 
