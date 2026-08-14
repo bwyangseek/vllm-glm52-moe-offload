@@ -41,6 +41,22 @@ Decode Buffer 与正在使用的 Experts Cache 相互独立。慢速 H2D Stage �
 需要等待上一位 Reader 完成。提交完成后再发布匹配的 Cache Map，从而保护
 Cache Slot 所有权。
 
+## Stats：专家与缓存统计
+
+### 每层专家执行位置
+
+![每层专家执行位置](figures/stats/01_layer_execution_assignment.svg)
+
+75 个 MoE Layer 的平均 Decode Layer Sample 可以拆分为：
+
+```text
+13.39 个 GPU Resident Experts
++ 0.07 个 GPU Updated Experts
++ 1.16 个 CPU Computed Experts
+```
+
+Layer 3～9 是当前最主要的 CPU 压力区，Layer 76～77 是较小的次级尾部。
+
 ### Decode Cache Policy
 
 ![Decode Cache Policy](figures/architecture/04_cache_policy.svg)
@@ -57,21 +73,6 @@ GLM 的全部 Top-8 Route 都参与最终 MoE 计算，但 K2 只将 Router 排�
 ```text
 GPU Resident Hits + GPU Updated Experts + CPU Computed Experts
 ```
-## Stats：专家与缓存统计
-
-### 每层专家执行位置
-
-![每层专家执行位置](figures/stats/01_layer_execution_assignment.svg)
-
-75 个 MoE Layer 的平均 Decode Layer Sample 可以拆分为：
-
-```text
-13.39 个 GPU Resident Experts
-+ 0.07 个 GPU Updated Experts
-+ 1.16 个 CPU Computed Experts
-```
-
-Layer 3～9 是当前最主要的 CPU 压力区，Layer 76～77 是较小的次级尾部。
 
 ![核心单uBatch](figures/architecture/08_decode_source_timeline.svg)
 在 8K～16K 混合长度 workload 上，当前单机 TP8 系统使用一半数量的 H20，
