@@ -13,6 +13,22 @@
 
 ![真实 Decode DBO 重叠](figures/measured/02_decode_dbo_overlap.svg)
 
+## Stats：专家与缓存统计
+
+### 每层专家执行位置
+
+![每层专家执行位置](figures/stats/01_layer_execution_assignment.svg)
+
+75 个 MoE Layer 的平均 Decode Layer Sample 可以拆分为：
+
+```text
+13.39 个 GPU Resident Experts
++ 0.07 个 GPU Updated Experts
++ 1.16 个 CPU Computed Experts
+```
+
+Layer 3～9 是当前最主要的 CPU 压力区，Layer 76～77 是较小的次级尾部。
+
 > 本仓库只包含该系统面向公开展示的设计与评测材料，源码未包含在仓库中。
 
 ## 系统配置
@@ -217,21 +233,6 @@ Prefill：
 这里保留了 P99 退化结果。Adaptive Chunk 改善了平均性能，但 Prefill/Decode
 混合调度干扰和 CPU Miss 波动仍是长尾延迟瓶颈。
 
-## Stats：专家与缓存统计
-
-### 每层专家执行位置
-
-![每层专家执行位置](figures/stats/01_layer_execution_assignment.svg)
-
-75 个 MoE Layer 的平均 Decode Layer Sample 可以拆分为：
-
-```text
-13.39 个 GPU Resident Experts
-+ 0.07 个 GPU Updated Experts
-+ 1.16 个 CPU Computed Experts
-```
-
-Layer 3～9 是当前最主要的 CPU 压力区，Layer 76～77 是较小的次级尾部。
 
 ### Route 热度与 CPU Miss 热度
 
