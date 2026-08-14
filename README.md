@@ -4,6 +4,59 @@
 
 ![系统总览](figures/architecture/01_system_overview.svg)
 
+### Prefill：GPU Prefetch 与双 Buffer
+
+![Prefill Prefetch 架构](figures/architecture/02_prefill_prefetch.svg)
+
+Prefill 阶段具有足够大的 Token Batch，可以用 GPU 计算隐藏专家搬运。E180
+常驻 Experts Cache，其余 E76 从 Pinned DRAM 更新到按层奇偶复用的 Prefill
+Buffer，最终所有 Hit/Miss Route 都在 GPU 上完成计算。
+
+两个 Prefill Buffer 防止下一层的专家更新覆盖当前层仍在读取的专家。Adaptive
+Scheduler 综合以下信息选择实际 Prefill Chunk：
+
+- Scheduler 的硬 Token Budget；
+- 8192 Token 的软目标；
+- 当前是否存在活跃 Decode；
+- 剩余 Prefill Tail 的大小。
+
+它的目标不是单纯缩小 Chunk，而是生成足够的 GPU 工作来覆盖 E76 更新，同时
+避免过大的 Prefill Step 长时间阻塞 Decode。
+
+### Decode：双 uBatch CPU/GPU 重叠
+
+![Decode DBO 架构](figures/architecture/03_decode_dbo.svg)
+
+Decode 单步 Token 数较少，无法用 GPU 计算摊平一次完整的 E76 搬运，因此
+采用 CPU/GPU 混合执行：
+
+- Experts Cache 中已驻留的专家在 GPU 上执行；
+- 最多 U2 个选中 Miss 先进入 Decode Buffer，再提交到 Experts Cache；
+- 其余 Miss Experts 由 CPU `forwardSparse` 执行；
+- DBO 将 Decode 拆成两个 uBatch，使 CPU-A 与 GPU-B 重叠，随后 CPU-B
+  与 GPU-A 重叠。
+
+Decode Buffer 与正在使用的 Experts Cache 相互独立。慢速 H2D Stage 可以
+提前进行，只有最后一小段 Decode Buffer → Experts Cache 的 D2D Commit
+需要等待上一位 Reader 完成。提交完成后再发布匹配的 Cache Map，从而保护
+Cache Slot 所有权。
+
+### Decode Cache Policy
+
+![Decode Cache Policy](figures/architecture/04_cache_policy.svg)
+
+GLM 的全部 Top-8 Route 都参与最终 MoE 计算，但 K2 只将 Router 排名前两位
+的专家加入 Cache 保护和更新工作集：
+
+- K2 Cache Hit 被移动到 `policy_sort` 的受保护区域；
+- 最多 U2 个唯一 K2 Miss 替换未受保护的 Victim Slot；
+- 未驻留且未更新的 Route 交给 CPU 计算。
+
+每层 Decode 的最终执行划分为：
+
+```text
+GPU Resident Hits + GPU Updated Experts + CPU Computed Experts
+
 ![核心单uBatch](figures/architecture/08_decode_source_timeline.svg)
 在 8K～16K 混合长度 workload 上，当前单机 TP8 系统使用一半数量的 H20，
 达到了双机 TP16 全 GPU 基线 **78.8% 的输出吞吐**和 **79.3% 的总 Token
@@ -74,58 +127,7 @@ Workspace 一起完整驻留在目标 TP8 H20 部署中。若按整层搬运 MoE
 - **Decode Miss**：交给 NUMA 本地 CPU 专家线程池计算；
 - 三条路径的 Routed Output 最终按照 Router Weight 加权合并。
 
-### Prefill：GPU Prefetch 与双 Buffer
 
-![Prefill Prefetch 架构](figures/architecture/02_prefill_prefetch.svg)
-
-Prefill 阶段具有足够大的 Token Batch，可以用 GPU 计算隐藏专家搬运。E180
-常驻 Experts Cache，其余 E76 从 Pinned DRAM 更新到按层奇偶复用的 Prefill
-Buffer，最终所有 Hit/Miss Route 都在 GPU 上完成计算。
-
-两个 Prefill Buffer 防止下一层的专家更新覆盖当前层仍在读取的专家。Adaptive
-Scheduler 综合以下信息选择实际 Prefill Chunk：
-
-- Scheduler 的硬 Token Budget；
-- 8192 Token 的软目标；
-- 当前是否存在活跃 Decode；
-- 剩余 Prefill Tail 的大小。
-
-它的目标不是单纯缩小 Chunk，而是生成足够的 GPU 工作来覆盖 E76 更新，同时
-避免过大的 Prefill Step 长时间阻塞 Decode。
-
-### Decode：双 uBatch CPU/GPU 重叠
-
-![Decode DBO 架构](figures/architecture/03_decode_dbo.svg)
-
-Decode 单步 Token 数较少，无法用 GPU 计算摊平一次完整的 E76 搬运，因此
-采用 CPU/GPU 混合执行：
-
-- Experts Cache 中已驻留的专家在 GPU 上执行；
-- 最多 U2 个选中 Miss 先进入 Decode Buffer，再提交到 Experts Cache；
-- 其余 Miss Experts 由 CPU `forwardSparse` 执行；
-- DBO 将 Decode 拆成两个 uBatch，使 CPU-A 与 GPU-B 重叠，随后 CPU-B
-  与 GPU-A 重叠。
-
-Decode Buffer 与正在使用的 Experts Cache 相互独立。慢速 H2D Stage 可以
-提前进行，只有最后一小段 Decode Buffer → Experts Cache 的 D2D Commit
-需要等待上一位 Reader 完成。提交完成后再发布匹配的 Cache Map，从而保护
-Cache Slot 所有权。
-
-### Decode Cache Policy
-
-![Decode Cache Policy](figures/architecture/04_cache_policy.svg)
-
-GLM 的全部 Top-8 Route 都参与最终 MoE 计算，但 K2 只将 Router 排名前两位
-的专家加入 Cache 保护和更新工作集：
-
-- K2 Cache Hit 被移动到 `policy_sort` 的受保护区域；
-- 最多 U2 个唯一 K2 Miss 替换未受保护的 Victim Slot；
-- 未驻留且未更新的 Route 交给 CPU 计算。
-
-每层 Decode 的最终执行划分为：
-
-```text
-GPU Resident Hits + GPU Updated Experts + CPU Computed Experts
 ```
 
 ### Adaptive Prefill Policy
